@@ -1,0 +1,23 @@
+@import "../base/settings";
+
+.Link {
+  font-family: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $color-dark;
+  transition: color 0.2s ease-in;
+
+  &--light {
+    color: $color-light;
+  }
+
+  &:hover,
+  &:visited,
+  &:active {
+    color: $color-primary;
+  }
+
+  & i {
+    margin-right: 1rem;
+  }
+}

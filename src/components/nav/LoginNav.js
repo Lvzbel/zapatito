@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "../Link";
 import "../../styles/components/nav/LoginNavStyles.scss";
 
 function LoginNav() {
@@ -9,14 +9,22 @@ function LoginNav() {
         <p className="LoginNav__promo">Free shipping on orders over $49</p>
         <ul className="LoginNav__nav">
           <li>
-            <Link className="LoginNav__link" to="/login">
-              Login
-            </Link>
+            <Link
+              to="/login"
+              content="Login"
+              variant="light"
+              funtional={false}
+              icon="fas fa-sign-in-alt"
+            />
           </li>
           <li>
-            <Link className="LoginNav__link" to="/cart">
-              Cart
-            </Link>
+            <Link
+              to="/cart"
+              content="Cart"
+              variant="light"
+              funtional={false}
+              icon="fas fa-shopping-cart"
+            />
           </li>
         </ul>
       </div>
