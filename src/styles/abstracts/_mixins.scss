@@ -1,0 +1,62 @@
+@mixin standard-box-shadow() {
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+@mixin section_padding {
+  padding: 10rem 15rem;
+
+  @include respond(md) {
+    padding: 5rem 0;
+  }
+}
+
+// Accessible hide
+
+@mixin hide() {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+// Media Queries
+@mixin respond($breakpoint) {
+  @if $breakpoint == nano {
+    // 350px
+    @media only screen and (max-width: 21.875em) {
+      @content;
+    }
+  }
+  @if $breakpoint == xs {
+    // 420px
+    @media only screen and (max-width: 28.125em) {
+      @content;
+    }
+  }
+  @if $breakpoint == sm {
+    // 600px
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == md {
+    // 960px
+    @media only screen and (max-width: 60em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == lg {
+    // 1280px
+    @media only screen and (max-width: 80em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == xl {
+    // 2400px
+    @media only screen and (min-width: 150em) {
+      @content;
+    }
+  }
+}
