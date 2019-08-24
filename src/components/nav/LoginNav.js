@@ -6,7 +6,7 @@ function LoginNav() {
   return (
     <div className="LoginNav">
       <div className="LoginNav__container container">
-        <p>Free shipping on orders over $49</p>
+        <p className="LoginNav__promo">Free shipping on orders over $49</p>
         <ul className="LoginNav__nav">
           <li>
             <Link className="LoginNav__link" to="/login">
