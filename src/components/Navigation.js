@@ -1,5 +1,5 @@
 import React from "react";
-import LoginNav from "./Nav/LoginNav";
+import LoginNav from "./nav/LoginNav";
 
 function Navigation() {
   return (
