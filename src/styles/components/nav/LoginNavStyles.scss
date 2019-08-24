@@ -1,6 +1,23 @@
+@import "../../base//settings";
+
 .LoginNav {
   width: 100%;
-  background-color: black;
-  color: white;
-  max-height: 4.5rem;
+  background-color: $color-dark;
+  color: $color-light;
+  height: 4.5rem;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__nav {
+    display: flex;
+
+    & li {
+      margin-left: 3rem;
+    }
+  }
 }
