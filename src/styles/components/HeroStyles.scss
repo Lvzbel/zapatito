@@ -5,19 +5,32 @@
   height: 50rem;
   background-image: linear-gradient(
       to right bottom,
-      rgba($color-primary, 0.6),
-      rgba($color-primary, 0.6)
+      rgba($color-primary, 0.4),
+      rgba($color-primary, 0.4)
     ),
     url("../../img/hero.jpg");
   background-size: cover;
   background-position: bottom;
 
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
   &__header {
+    font-family: "Raleway", sans-serif;
     font-size: 7rem;
     text-align: center;
-    font-weight: 300;
+    font-weight: 400;
     color: $color-light;
-    letter-spacing: 1rem;
+    letter-spacing: 0.5rem;
     text-shadow: 0.5rem 1rem 2rem rgba(black, 0.4);
+  }
+
+  &__cta {
+    text-align: center;
   }
 }
