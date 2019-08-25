@@ -13,7 +13,7 @@ export class MainNav extends Component {
           </LinkRouter>
           <ul className="MainNav__links">
             <li className="MainNav__link">
-              <Link to="/" content="home" funtional={true} />
+              <Link to="/" exact={true} content="home" funtional={true} />
             </li>
             <li className="MainNav__link">
               <Link to="/shop" content="shop" funtional={true} />
