@@ -8,12 +8,18 @@ function Link({
   content = "",
   variant = "dark",
   funtional = false,
-  icon = false
+  icon = false,
+  exact = false
 }) {
   const linkClass = `Link Link--${variant}`;
   if (funtional) {
     return (
-      <NavLink to={to} className={linkClass} activeClassName="Link--selected">
+      <NavLink
+        to={to}
+        exact={exact}
+        className={linkClass}
+        activeClassName="Link--selected"
+      >
         {icon && <i className={icon}></i>}
         {content}
       </NavLink>
