@@ -1,10 +1,11 @@
 import React from "react";
-import LoginNav from "./nav/LoginNav";
 import MainNav from "./nav/MainNav";
+import LoginNav from "./nav/LoginNav";
+import "../styles/components/NavigationStyles.scss";
 
 function Navigation() {
   return (
-    <nav>
+    <nav className="Navigation">
       <LoginNav />
       <MainNav />
     </nav>

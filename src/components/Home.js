@@ -1,8 +1,14 @@
 import React, { Component } from "react";
+import Hero from "./Hero";
+import "../styles/components/HomeStyles.scss";
 
 export class Home extends Component {
   render() {
-    return <div>This is home</div>;
+    return (
+      <div className="Home">
+        <Hero />
+      </div>
+    );
   }
 }
 
