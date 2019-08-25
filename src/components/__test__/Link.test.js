@@ -1,6 +1,6 @@
 import React from "react";
 import { mount } from "enzyme";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, NavLink } from "react-router-dom";
 import Link from "../Link";
 
 it("should render an a tag with content", () => {
@@ -22,4 +22,13 @@ it("should render a link with an icon", () => {
   );
   expect(wrapper.find("i").length).toEqual(1);
   wrapper.unmount();
+});
+
+it("should render a functional link", () => {
+  const wrapper = mount(
+    <BrowserRouter>
+      <Link funtional={true} />
+    </BrowserRouter>
+  );
+  expect(wrapper.find(NavLink).length).toEqual(1);
 });
