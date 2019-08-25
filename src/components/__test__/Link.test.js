@@ -21,4 +21,5 @@ it("should render a link with an icon", () => {
     </BrowserRouter>
   );
   expect(wrapper.find("i").length).toEqual(1);
+  wrapper.unmount();
 });
