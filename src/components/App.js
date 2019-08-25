@@ -13,11 +13,11 @@ export class App extends Component {
       <Router>
         <Navigation />
         <Switch>
-          <Route path="/" strict component={Home} />
           <Route path="/shop" component={Shop} />
           <Route path="/sale" component={Sale} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
+          <Route path="/" strict component={Home} />
         </Switch>
       </Router>
     );
