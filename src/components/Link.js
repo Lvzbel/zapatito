@@ -6,7 +6,7 @@ import "../styles/components/LinkStyles.scss";
 function Link({
   to = "#",
   content = "",
-  variant = "light",
+  variant = "dark",
   funtional = false,
   icon = false
 }) {
