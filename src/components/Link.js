@@ -13,11 +13,7 @@ function Link({
   const linkClass = `Link Link--${variant}`;
   if (funtional) {
     return (
-      <NavLink
-        to={to}
-        className={linkClass}
-        activeClassName={`selected--${variant}`}
-      >
+      <NavLink to={to} className={linkClass} activeClassName="Link--selected">
         {icon && <i className={icon}></i>}
         {content}
       </NavLink>
