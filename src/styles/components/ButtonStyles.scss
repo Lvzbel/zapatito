@@ -1,8 +1,6 @@
 @import "../base//settings";
 
 .btn {
-  background-color: $color-dark;
-  color: $color-light;
   font-family: inherit;
   text-decoration: none;
   text-transform: uppercase;
@@ -10,8 +8,23 @@
   letter-spacing: 0.5rem;
   border-radius: 1px;
 
-  &:hover {
+  &__primary {
+    background-color: $color-dark;
+    color: $color-light;
+
+    &:hover {
+      background-color: $color-light;
+      color: $color-dark;
+    }
+  }
+
+  &__secondary {
     background-color: $color-light;
     color: $color-dark;
+
+    &:hover {
+      background-color: $color-dark;
+      color: $color-light;
+    }
   }
 }
