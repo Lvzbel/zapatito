@@ -10,7 +10,8 @@ function PromoImg() {
   return (
     <div className="PromoImg" style={styles}>
       <h2 className="PromoImg__header">Perfomance Lifestyle</h2>
-      <Link className="btn btn__secondary">Perfomance Lifestyle</Link>
+      <Link className="PromoImg__btn btn btn__secondary">Shop Now!</Link>
+      <div className="PromoImg__transparency"></div>
     </div>
   );
 }

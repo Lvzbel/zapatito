@@ -9,7 +9,8 @@ export class Home extends Component {
     return (
       <div className="Home">
         <Hero />
-        <div style={{ height: "300px", width: "500px" }}>
+        <div style={{ height: "600px", display: "flex", width: "100%" }}>
+          <PromoImg />
           <PromoImg />
         </div>
       </div>
