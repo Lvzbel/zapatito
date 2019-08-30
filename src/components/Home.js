@@ -17,6 +17,13 @@ export class Home extends Component {
           <div className="Home__promo-image">
             <PromoImg />
           </div>
+          <div className="Home__stiches">
+            <div className="Home__stich"></div>
+            <div className="Home__stich"></div>
+            <div className="Home__stich"></div>
+            <div className="Home__stich"></div>
+            <div className="Home__stich"></div>
+          </div>
         </section>
       </div>
     );
