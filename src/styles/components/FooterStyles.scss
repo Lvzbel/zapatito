@@ -1,0 +1,104 @@
+@import "../base/settings";
+
+.Footer {
+  background-color: $color-dark;
+  color: white;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 6rem 0 6rem 0;
+  }
+
+  &__header {
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+
+    &::after {
+      content: "—";
+      display: inline;
+      padding-left: 0.5rem;
+    }
+  }
+
+  &__links {
+    list-style-type: none;
+  }
+
+  &__link a {
+    display: block;
+    border-radius: 1px;
+    text-decoration: none;
+    color: $color-secondary;
+    padding: 0.5rem 0.5rem 0.5rem 0;
+    transition: color 0.2s ease-in;
+    margin-bottom: 0.25rem;
+    &:visited {
+      color: $color-secondary;
+    }
+    &:hover,
+    &:active {
+      color: $color-light;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    color: $color-secondary;
+
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+
+    & i {
+      margin-right: 1.5rem;
+      color: darken($color-secondary, 20%);
+    }
+
+    & span {
+      display: block;
+    }
+  }
+
+  &__social {
+    display: flex;
+    list-style-type: none;
+    margin-bottom: 3rem;
+
+    & a {
+      display: block;
+      height: 4rem;
+      width: 4rem;
+      line-height: 4rem;
+      font-size: 1.8rem;
+      background-color: $color-secondary;
+      color: $color-light;
+      text-align: center;
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__trademark {
+    background-color: $color-secondary;
+    font-size: 1.4rem;
+    padding: 1.5rem;
+
+    & div {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__terms a {
+    color: white;
+    text-decoration: none;
+  }
+
+  &__terms span {
+    margin: 0 2rem 0 2rem;
+  }
+}

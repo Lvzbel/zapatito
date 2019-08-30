@@ -6,6 +6,7 @@ import Shop from "./Shop";
 import Sale from "./Sale";
 import About from "./About";
 import Contact from "./Contact";
+import Footer from "./Footer";
 
 export class App extends Component {
   render() {
@@ -21,6 +22,7 @@ export class App extends Component {
             <Route path="/" strict component={Home} />
           </main>
         </Switch>
+        <Footer />
       </Router>
     );
   }
