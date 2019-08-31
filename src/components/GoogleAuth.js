@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../styles/components/GoogleAuthStyles.scss";
 
 export class GoogleAuth extends Component {
   state = { isSignedIn: null };
@@ -42,9 +43,18 @@ export class GoogleAuth extends Component {
     if (this.state.isSignedIn === null) {
       return null;
     } else if (this.state.isSignedIn) {
-      return <button onClick={this.onSignOutClick}>Sign out</button>;
+      return (
+        <button className="Auth__btn" onClick={this.onSignOutClick}>
+          <i class="fas fa-sign-out-alt"></i>
+          Hello Sign out
+        </button>
+      );
     } else {
-      return <button onClick={this.onSignInClick}>Sign in</button>;
+      return (
+        <button className="Auth__btn" onClick={this.onSignInClick}>
+          <i class="fas fa-sign-in-alt"></i>Sign in
+        </button>
+      );
     }
   }
 

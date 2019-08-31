@@ -1,0 +1,19 @@
+@import "../base/settings";
+
+.Auth {
+  &__btn {
+    font-family: inherit;
+    background-color: transparent;
+    border: none;
+    text-transform: uppercase;
+    color: $color-light;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    & i {
+      margin-right: 1rem;
+    }
+  }
+}
