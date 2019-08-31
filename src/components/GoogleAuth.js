@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { signIn, signOut } from "../actions";
 import "../styles/components/GoogleAuthStyles.scss";
 
 export class GoogleAuth extends Component {
@@ -14,25 +16,26 @@ export class GoogleAuth extends Component {
         })
         .then(() => {
           this.auth = window.gapi.auth2.getAuthInstance();
-          console.log("is Signed in?", this.auth.isSignedIn.get());
-          this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+          this.onAuthChange({ isSignedIn: this.auth.isSignedIn.get() });
           this.auth.isSignedIn.listen(this.onAuthChange);
         });
     });
   }
 
-  onAuthChange = () => {
-    this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+  onAuthChange = isSignedIn => {
+    isSignedIn
+      ? this.props.signIn(
+          this.auth.currentUser.get().getId(),
+          this.auth.currentUser
+            .get()
+            .getBasicProfile()
+            .getGivenName()
+        )
+      : this.props.signOut();
   };
 
   onSignInClick = () => {
     this.auth.signIn();
-    console.log(
-      this.auth.currentUser
-        .get()
-        .getBasicProfile()
-        .getGivenName()
-    );
   };
 
   onSignOutClick = () => {
@@ -40,13 +43,11 @@ export class GoogleAuth extends Component {
   };
 
   renderAuthButton() {
-    if (this.state.isSignedIn === null) {
-      return null;
-    } else if (this.state.isSignedIn) {
+    if (this.props.isSignedIn) {
       return (
         <button className="Auth__btn" onClick={this.onSignOutClick}>
           <i class="fas fa-sign-out-alt"></i>
-          Hello Sign out
+          Hello {this.props.name}, Sign Out
         </button>
       );
     } else {
@@ -63,4 +64,11 @@ export class GoogleAuth extends Component {
   }
 }
 
-export default GoogleAuth;
+const mapStateToProps = state => {
+  return { isSignedIn: state.auth.isSignedIn, name: state.auth.name };
+};
+
+export default connect(
+  mapStateToProps,
+  { signIn, signOut }
+)(GoogleAuth);

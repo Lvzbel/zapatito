@@ -8,16 +8,9 @@ function LoginNav() {
     <div className="LoginNav">
       <div className="LoginNav__container container">
         <p className="LoginNav__promo">Free shipping on orders over $49</p>
-        <GoogleAuth />
         <ul className="LoginNav__nav">
           <li>
-            <Link
-              to="/login"
-              content="Login"
-              variant="light"
-              funtional={false}
-              icon="fas fa-sign-in-alt"
-            />
+            <GoogleAuth />
           </li>
           <li>
             <Link
