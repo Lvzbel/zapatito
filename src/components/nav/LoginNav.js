@@ -1,12 +1,14 @@
 import React from "react";
 import Link from "../Link";
 import "../../styles/components/nav/LoginNavStyles.scss";
+import GoogleAuth from "../GoogleAuth";
 
 function LoginNav() {
   return (
     <div className="LoginNav">
       <div className="LoginNav__container container">
         <p className="LoginNav__promo">Free shipping on orders over $49</p>
+        <GoogleAuth />
         <ul className="LoginNav__nav">
           <li>
             <Link
