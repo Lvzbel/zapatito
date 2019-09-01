@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Hero from "./Hero";
 import PromoImg from "./PromoImg";
 import "../styles/components/HomeStyles.scss";
@@ -10,9 +12,12 @@ import ProductCard from "./ProductCard";
 import Carousel from "./Carousel";
 
 export class Home extends Component {
+  componentWillMount() {
+    AOS.init();
+  }
   render() {
     return (
-      <div className="Home">
+      <div data-aos-duration="1000" data-aos="fade-down" className="Home">
         <Hero />
         <section className="Home__promo-images">
           <div className="Home__promo-image">
