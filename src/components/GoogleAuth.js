@@ -46,14 +46,14 @@ export class GoogleAuth extends Component {
     if (this.props.isSignedIn) {
       return (
         <button className="Auth__btn" onClick={this.onSignOutClick}>
-          <i class="fas fa-sign-out-alt"></i>
+          <i className="fas fa-sign-out-alt"></i>
           Hello {this.props.name}, Sign Out
         </button>
       );
     } else {
       return (
         <button className="Auth__btn" onClick={this.onSignInClick}>
-          <i class="fas fa-sign-in-alt"></i>Sign in
+          <i className="fas fa-sign-in-alt"></i>Sign in
         </button>
       );
     }
