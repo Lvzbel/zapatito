@@ -4,19 +4,32 @@ import about1 from "img/about-1.jpg";
 import about2 from "img/about-2.jpg";
 import about3 from "img/about-3.jpg";
 import "../styles/layout/AboutStyles.scss";
+// Testing
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export class About extends Component {
+  componentWillMount() {
+    AOS.init();
+  }
   render() {
     return (
       <section className="About">
         <div className="About__container container">
           <div className="About__info">
             <img
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              data-aos-delay="300"
               className="About__team-img"
               src={aboutTeam}
               alt="team members"
             />
-            <div className="About__description">
+            <div
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              className="About__description"
+            >
               <h3 className="About__header">
                 <span>#</span>TeamZapatito
               </h3>
@@ -43,9 +56,27 @@ export class About extends Component {
             </div>
           </div>
           <div className="About__showcase">
-            <img src={about1} alt="team member" className="About__single-img" />
-            <img src={about2} alt="team member" className="About__single-img" />
-            <img src={about3} alt="team member" className="About__single-img" />
+            <img
+              data-aos="zoom-in-up"
+              data-aos-delay="500"
+              src={about1}
+              alt="team member"
+              className="About__single-img"
+            />
+            <img
+              data-aos="zoom-in-up"
+              data-aos-delay="700"
+              src={about2}
+              alt="team member"
+              className="About__single-img"
+            />
+            <img
+              data-aos="zoom-in-up"
+              data-aos-delay="900"
+              src={about3}
+              alt="team member"
+              className="About__single-img"
+            />
           </div>
         </div>
       </section>
