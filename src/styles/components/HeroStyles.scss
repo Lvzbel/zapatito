@@ -5,8 +5,8 @@
   height: 50rem;
   background-image: linear-gradient(
       to right bottom,
-      rgba($color-primary, 0.4),
-      rgba($color-primary, 0.4)
+      rgba($color-primary, 0.1),
+      rgba($color-primary, 0.1)
     ),
     url("../../img/hero.jpg");
   background-size: cover;
@@ -21,12 +21,12 @@
   }
 
   &__header {
-    font-family: "Raleway", sans-serif;
-    font-size: 7rem;
+    font-size: 6.7rem;
     text-align: center;
     font-weight: 400;
+    text-transform: uppercase;
     color: $color-light;
-    letter-spacing: 0.5rem;
+    letter-spacing: 1rem;
     text-shadow: 0.5rem 1rem 2rem rgba(black, 0.4);
   }
 
