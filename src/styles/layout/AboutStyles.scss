@@ -1,0 +1,60 @@
+@import "../../styles/base/settings";
+
+.About {
+  margin-top: 10rem;
+
+  &__container {
+    padding: 6rem 0;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    height: 50rem;
+    margin-bottom: 6rem;
+  }
+
+  &__header {
+    font-size: 3.7rem;
+    font-weight: 400;
+    letter-spacing: 0.25rem;
+    margin-bottom: 2rem;
+    line-height: 1;
+
+    & span {
+      color: $color-primary;
+    }
+  }
+
+  &__paragraph {
+    color: #5c5c5c;
+    line-height: 1.7;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__team-img {
+    width: 50%;
+    border-radius: 1px;
+  }
+
+  &__description {
+    width: 45%;
+  }
+
+  &__showcase {
+    display: flex;
+    justify-content: space-between;
+    height: 60rem;
+  }
+
+  &__single-img {
+    display: block;
+    width: 30%;
+    border-radius: 1px;
+  }
+}
