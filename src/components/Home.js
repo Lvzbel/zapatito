@@ -6,7 +6,8 @@ import "../styles/components/ButtonStyles.scss";
 import "../styles/layout/HomeStyles.scss";
 
 // TEST
-import ProductPreview from "./ProductCard";
+import ProductCard from "./ProductCard";
+import Carousel from "./Carousel";
 
 export class Home extends Component {
   render() {
@@ -29,7 +30,19 @@ export class Home extends Component {
           </div>
         </section>
         <section className="Home__featured">
-          <ProductPreview />
+          <h3 className="Home__header">FEATURED PRODUCTS</h3>
+          <div className="container">
+            <Carousel>
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+            </Carousel>
+          </div>
         </section>
       </div>
     );

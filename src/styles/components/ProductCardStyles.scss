@@ -2,9 +2,9 @@
 
 .ProductCard {
   display: block;
-  height: 30rem;
-  width: 30rem;
-  padding: 1rem;
+  min-height: 25rem;
+  min-width: 25rem;
+  margin: 1rem;
 
   &__figure {
     height: 100%;
