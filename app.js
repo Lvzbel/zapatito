@@ -19,6 +19,9 @@ const saleFinder = db => {
 // STATIC FILES
 app.use(express.static(path.join(__dirname, "client/build")));
 
+// STATIC IMAGES
+app.use("/images", express.static(path.join(__dirname, "img")));
+
 // ROUTES
 app.get("/api", (req, res) => {
   res.json(db);
