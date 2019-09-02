@@ -8,8 +8,9 @@ import {
   FETCH_PANTS,
   FETCH_SALE
 } from "./types";
+const axios = require("axios");
 
-const api = "http://localhost:5000/api";
+const api = "/api";
 
 // GOOGLE AUTH
 export const signIn = (userId, name) => {
@@ -62,7 +63,6 @@ export const fetchPants = () => async dispatch => {
 };
 
 export const fetchSale = () => async dispatch => {
-  const response = await fetch(`${api}/sale`);
-  const data = await response.json();
-  dispatch({ type: FETCH_SALE, payload: data });
+  const response = await axios.get(`${api}/sale`);
+  dispatch({ type: FETCH_SALE, payload: response.data });
 };

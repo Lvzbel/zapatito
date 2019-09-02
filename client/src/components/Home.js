@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { connect } from "react-redux";
+import { fetchSale } from "actions";
 import Hero from "./Hero";
 import PromoImg from "./PromoImg";
 import "../styles/components/HomeStyles.scss";
@@ -15,7 +17,12 @@ export class Home extends Component {
   componentWillMount() {
     AOS.init();
   }
+
+  componentDidMount() {
+    this.props.fetchSale();
+  }
   render() {
+    console.log(this.props);
     return (
       <div data-aos-duration="1000" data-aos="fade-down" className="Home">
         <Hero />
@@ -54,4 +61,11 @@ export class Home extends Component {
   }
 }
 
-export default Home;
+const mapStateToProps = state => {
+  return { productsSale: state.products.productsSale };
+};
+
+export default connect(
+  mapStateToProps,
+  { fetchSale }
+)(Home);

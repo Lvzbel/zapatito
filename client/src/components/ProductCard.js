@@ -19,7 +19,9 @@ export class ProductCard extends Component {
           </div>
           <figcaption className="ProductCard__caption">
             <div className="ProductCard__details">
-              <Link className="ProductCard__link">REBEL (ARMY GREEN)</Link>
+              <Link to="#" className="ProductCard__link">
+                REBEL (ARMY GREEN)
+              </Link>
               <p className="ProductCard__price">$115.00</p>
             </div>
             <div className="ProductCard__separator"></div>
