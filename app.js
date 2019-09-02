@@ -56,4 +56,4 @@ app.get("/api/sale", (req, res) => {
 
 const saleProducts = saleFinder(db.products);
 // Server running
-app.listen(3000);
+app.listen(5000);
