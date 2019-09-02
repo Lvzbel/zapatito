@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e8f11319.chunk.css",
+    "main.js": "/static/js/main.83fe8758.chunk.js",
+    "main.js.map": "/static/js/main.83fe8758.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.d83df130.js",
+    "runtime~main.js.map": "/static/js/runtime~main.d83df130.js.map",
+    "static/css/2.0139936c.chunk.css": "/static/css/2.0139936c.chunk.css",
+    "static/js/2.0afb68a8.chunk.js": "/static/js/2.0afb68a8.chunk.js",
+    "static/js/2.0afb68a8.chunk.js.map": "/static/js/2.0afb68a8.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.af6ea047d3904ded3e2a9c19993f17c8.js": "/precache-manifest.af6ea047d3904ded3e2a9c19993f17c8.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.0139936c.chunk.css.map": "/static/css/2.0139936c.chunk.css.map",
+    "static/css/main.e8f11319.chunk.css.map": "/static/css/main.e8f11319.chunk.css.map",
+    "static/media/about-1.jpg": "/static/media/about-1.eb83a8b5.jpg",
+    "static/media/about-2.jpg": "/static/media/about-2.081e5907.jpg",
+    "static/media/about-3.jpg": "/static/media/about-3.2c01c24f.jpg",
+    "static/media/about-team.jpg": "/static/media/about-team.108a1a0f.jpg",
+    "static/media/all.css": "/static/media/fa-solid-900.d6d8d5da.woff2",
+    "static/media/HeroStyles.scss": "/static/media/hero.8aa3eb2b.jpg",
+    "static/media/product_test_img.jpg": "/static/media/product_test_img.b72bc2a3.jpg",
+    "static/media/slick-theme.css": "/static/media/slick.f97e3bbf.svg",
+    "static/media/traveler-bagpack.jpg": "/static/media/traveler-bagpack.9d1ec311.jpg"
+  }
+}
