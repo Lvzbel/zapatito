@@ -13,7 +13,10 @@ const saleFinder = db => {
     }
     return 0;
   });
-  return sortedProducts.splice(0, 9);
+  const filtered = sortedProducts.filter(
+    item => item.category === "shoes" || item.category === "backpack"
+  );
+  return filtered.splice(0, 14);
 };
 
 // STATIC FILES
