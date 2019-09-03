@@ -5,13 +5,11 @@ import { connect } from "react-redux";
 import { fetchSale } from "actions";
 import Hero from "./Hero";
 import PromoImg from "./PromoImg";
+import ProductCard from "./ProductCard";
+import Carousel from "./Carousel";
 import "../styles/components/HomeStyles.scss";
 import "../styles/components/ButtonStyles.scss";
 import "../styles/layout/HomeStyles.scss";
-
-// TEST
-import ProductCard from "./ProductCard";
-import Carousel from "./Carousel";
 
 export class Home extends Component {
   componentWillMount() {
@@ -21,8 +19,19 @@ export class Home extends Component {
   componentDidMount() {
     this.props.fetchSale();
   }
+
+  renderCarouselItems() {
+    return this.props.productsSale.map(item => (
+      <ProductCard
+        key={item.id}
+        name={item.name}
+        image={`/images/${item.image}.jpg`}
+        price={item.price}
+        category={item.category}
+      />
+    ));
+  }
   render() {
-    console.log(this.props);
     return (
       <div data-aos-duration="1000" data-aos="fade-down" className="Home">
         <Hero />
@@ -44,15 +53,8 @@ export class Home extends Component {
         <section className="Home__featured">
           <h3 className="Home__header">FEATURED PRODUCTS</h3>
           <div className="container">
-            <Carousel>
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
+            <Carousel className="Home-carousel">
+              {this.renderCarouselItems()}
             </Carousel>
           </div>
         </section>
