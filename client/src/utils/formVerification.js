@@ -3,10 +3,18 @@ export default class FormValidation {
     this.input = input;
   }
 
+  // Getter
+  input() {
+    return this.input;
+  }
+
+  // Checks if input is empty should return true if empty
   isEmpty() {
     return this.input === "";
   }
-}
 
-// const test = new FormValidation("");
-// console.log(test.isEmpty());
+  // Removes leading spaces and lower cases input
+  sanitizeInput() {
+    this.input = this.input.trim().toLowerCase();
+  }
+}
