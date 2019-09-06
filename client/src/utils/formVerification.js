@@ -20,7 +20,7 @@ export default class FormValidation {
   }
 
   // Checks if name is valid
-  checkName() {
+  validateName() {
     const regex = /^[A-Za-z\s]+?[A-Za-z]$/;
     return regex.test(this.input);
   }
