@@ -30,4 +30,10 @@ export default class FormValidation {
     const regex = /^[\w-?]+@[\w]+\.[a-zA-Z]{2,4}$/;
     return regex.test(this.input);
   }
+
+  // validate phone number
+  validatePhoneNumber() {
+    const regex = /^1?(\s?|-?)(\(?|-?)[\d]{3}(\)?|-?|\s)[\d]{3}(-?|\s)[\d]{4}$/;
+    return regex.test(this.input);
+  }
 }

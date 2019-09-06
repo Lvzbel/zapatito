@@ -35,4 +35,23 @@ describe("Test an empty input", () => {
     const invalidEmail = new FormValidation("rodrigo-cotogmail.com");
     expect(invalidEmail.validateEmail()).toBeFalsy();
   });
+
+  it("validates phone number in the correct format", () => {
+    const phone1 = new FormValidation("1-888-888-8888");
+    expect(phone1.validatePhoneNumber()).toBeTruthy();
+
+    const phone2 = new FormValidation("1(888)888-8888");
+    expect(phone2.validatePhoneNumber()).toBeTruthy();
+
+    const phone3 = new FormValidation("(888)888-8888");
+    expect(phone3.validatePhoneNumber()).toBeTruthy();
+
+    const phone4 = new FormValidation("8888888888");
+    expect(phone4.validatePhoneNumber()).toBeTruthy();
+  });
+
+  it("rejects none US phone numbers", () => {
+    const wrongPhone = new FormValidation("503-888-888-8888");
+    expect(wrongPhone.validatePhoneNumber()).toBeFalsy();
+  });
 });
