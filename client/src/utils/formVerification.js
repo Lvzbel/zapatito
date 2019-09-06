@@ -19,9 +19,15 @@ export default class FormValidation {
     this.input = this.input.trim().toLowerCase();
   }
 
-  // Checks if name is valid
+  // validates names
   validateName() {
     const regex = /^[A-Za-z\s]+?[A-Za-z]$/;
+    return regex.test(this.input);
+  }
+
+  // validates emails
+  validateEmail() {
+    const regex = /^[\w-?]+@[\w]+\.[a-zA-Z]{2,4}$/;
     return regex.test(this.input);
   }
 }

@@ -18,10 +18,21 @@ describe("Test an empty input", () => {
     expect(name.validateName()).toBeTruthy();
   });
 
-  it("regets name with digits on it", () => {
+  it("rejects name with digits on it", () => {
     const nameWithDigits = new FormValidation("rodrigo777");
     expect(nameWithDigits.validateName()).toBeFalsy();
+
     const nameWithDigits2 = new FormValidation("rodr777igo");
     expect(nameWithDigits2.validateName()).toBeFalsy();
+  });
+
+  it("validates email being in the correct format", () => {
+    const validEmail = new FormValidation("rodrigo-coto@gmail.com");
+    expect(validEmail.validateEmail()).toBeTruthy();
+  });
+
+  it("rejects email not in the correct format", () => {
+    const invalidEmail = new FormValidation("rodrigo-cotogmail.com");
+    expect(invalidEmail.validateEmail()).toBeFalsy();
   });
 });
