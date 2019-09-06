@@ -8,9 +8,13 @@ describe("Test an empty input", () => {
   });
 
   // Sanitize a string to remove spaces and to lowercase input
-  test("removes starting spaces, fallowing spaces and lower cases input", () => {
+  it("removes starting spaces, fallowing spaces and lower cases input", () => {
     const sanitizeString = new FormValidation("  Test  ");
-    sanitizeString.sanitizeInput();
     expect(sanitizeString.input).toEqual("test");
+  });
+
+  it("validates name with letter characters only", () => {
+    const name = new FormValidation("rodrigo");
+    expect(name.validateName()).toBeTruthy();
   });
 });
