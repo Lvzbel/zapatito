@@ -17,4 +17,11 @@ describe("Test an empty input", () => {
     const name = new FormValidation("rodrigo");
     expect(name.validateName()).toBeTruthy();
   });
+
+  it("regets name with digits on it", () => {
+    const nameWithDigits = new FormValidation("rodrigo777");
+    expect(nameWithDigits.validateName()).toBeFalsy();
+    const nameWithDigits2 = new FormValidation("rodr777igo");
+    expect(nameWithDigits2.validateName()).toBeFalsy();
+  });
 });
