@@ -1,6 +1,7 @@
 export default class FormValidation {
   constructor(input) {
     this.input = input;
+    this.sanitizeInput();
   }
 
   // Getter
@@ -16,5 +17,11 @@ export default class FormValidation {
   // Removes leading spaces and lower cases input
   sanitizeInput() {
     this.input = this.input.trim().toLowerCase();
+  }
+
+  // Checks if name is valid
+  checkName() {
+    const regex = /^[A-Za-z\s]+?[A-Za-z]$/;
+    return regex.test(this.input);
   }
 }
