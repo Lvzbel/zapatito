@@ -1,7 +1,46 @@
 export default class FormValidation {
-  constructor(input) {
+  constructor(input, type = "NAME") {
     this.input = input;
+    this.type = type;
+    this.result = {
+      isValid: null,
+      errorMessage: null
+    };
     this.sanitizeInput();
+  }
+
+  validate() {
+    switch (this.type) {
+      case "NAME":
+        testResult = this.validateName();
+        testResult
+          ? (this.result = { ...this.result })
+          : (this.result = {
+              isValid: false,
+              errorMessage: "Please enter a valid name"
+            });
+        break;
+      case "PHONE":
+        testResult = this.validatePhoneNumber();
+        testResult
+          ? (this.result = { ...this.result })
+          : (this.result = {
+              isValid: false,
+              errorMessage: "Please enter a valid phone number"
+            });
+      case "EMAIL":
+        testResult = this.validateEmail();
+        testResult
+          ? (this.result = { ...this.result })
+          : (this.result = {
+              isValid: false,
+              errorMessage: "Please enter a valid phone number"
+            });
+      default:
+        break;
+    }
+
+    return this.result;
   }
 
   // Getter
