@@ -1,6 +1,6 @@
 import FormValidation from "../formVerification";
 
-describe("Test an empty input", () => {
+describe("Test all regex methods", () => {
   // Test for empty strings
   it("checks if a string is empty", () => {
     const testEmptyString = new FormValidation("");
