@@ -31,70 +31,51 @@ describe("Validates NAME input", () => {
   });
 });
 
-//   it("rejects name with digits on it", () => {
-//     const nameWithDigits = new FormValidation("rodrigo777");
-//     expect(nameWithDigits.validateName()).toBeFalsy();
+describe("Validates EMAIL input", () => {
+  const emailInput = new FormValidation("EMAIL");
 
-//     const nameWithDigits2 = new FormValidation("rodr777igo");
-//     expect(nameWithDigits2.validateName()).toBeFalsy();
-//   });
+  it("validates email in the correct format", () => {
+    const result = emailInput.validate("rodrigo-coto@gmail.com");
+    expect(result.isValid).toBeTruthy();
+    expect(result.errorMessage).toBeNull();
+  });
 
-//   it("validates email being in the correct format", () => {
-//     const validEmail = new FormValidation("rodrigo-coto@gmail.com");
-//     expect(validEmail.validateEmail()).toBeTruthy();
-//   });
+  it("rejects email not in the correct format", () => {
+    const result = emailInput.validate("rodrigo-cotogmail.com");
+    expect(result.isValid).toBeFalsy();
+    expect(result.errorMessage).toEqual("Please enter a valid email address");
+  });
+});
 
-//   it("rejects email not in the correct format", () => {
-//     const invalidEmail = new FormValidation("rodrigo-cotogmail.com");
-//     expect(invalidEmail.validateEmail()).toBeFalsy();
-//   });
+describe("Validates PHONE input", () => {
+  const phoneInput = new FormValidation("PHONE");
 
-//   it("validates phone number in the correct format", () => {
-//     const phone1 = new FormValidation("1-888-888-8888");
-//     expect(phone1.validatePhoneNumber()).toBeTruthy();
+  it("validates a valid US phone number in different formats", () => {
+    let result = phoneInput.validate("1-888-888-8888");
+    expect(result.isValid).toBeTruthy();
+    expect(result.errorMessage).toBeNull();
 
-//     const phone2 = new FormValidation("1(888)888-8888");
-//     expect(phone2.validatePhoneNumber()).toBeTruthy();
+    result = phoneInput.validate("1(888)888-8888");
+    expect(result.isValid).toBeTruthy();
+    expect(result.errorMessage).toBeNull();
 
-//     const phone3 = new FormValidation("(888)888-8888");
-//     expect(phone3.validatePhoneNumber()).toBeTruthy();
+    result = phoneInput.validate("(888)888-8888");
+    expect(result.isValid).toBeTruthy();
+    expect(result.errorMessage).toBeNull();
 
-//     const phone4 = new FormValidation("8888888888");
-//     expect(phone4.validatePhoneNumber()).toBeTruthy();
-//   });
+    result = phoneInput.validate("8888888888");
+    expect(result.isValid).toBeTruthy();
+    expect(result.errorMessage).toBeNull();
+  });
 
-//   it("rejects none US phone numbers", () => {
-//     const wrongPhone = new FormValidation("503-888-888-8888");
-//     expect(wrongPhone.validatePhoneNumber()).toBeFalsy();
-//   });
-// });
+  it("rejects none US phone numbers", () => {
+    let result = phoneInput.validate("503-888-888-8888");
+    const errorMessage = "Please enter a valid phone number";
+    expect(result.isValid).toBeFalsy();
+    expect(result.errorMessage).toEqual(errorMessage);
 
-// describe("Test functionality of validate method", () => {
-//   it("returns error with invalid name input", () => {
-//     const invalidName = new FormValidation("test123");
-//     const result = invalidName.validate("NAME");
-//     expect(result.isValid).toBeFalsy();
-//     expect(result.errorMessage).toEqual("Please enter a valid name");
-//   });
-
-//   it("returns a valid name input", () => {
-//     const validName = new FormValidation("Rodrigo");
-//     const result = validName.validate("NAME");
-//     expect(result.isValid).toBeTruthy();
-//     expect(result.errorMessage).toBeNull();
-//   });
-
-//   it("return error with invalid phone input", () => {
-//     const invalidPhone = new FormValidation("234-2343-1234");
-//     const result = invalidPhone.validate("PHONE");
-//     expect(result.isValid).toBeFalsy();
-//     expect(result.errorMessage).toEqual("Please enter a valid phone number");
-//   });
-
-//   it("return a valid phone input", () => {
-//     const validPhone = new FormValidation("8888888888");
-//     const result = validPhone.validate("PHONE");
-//     // expect(result.isValid).toBeTruthy();
-//     expect(result.errorMessage).toBeNull();
-//   });
-// });
+    result = phoneInput.validate("888-8888-8888");
+    expect(result.isValid).toBeFalsy();
+    expect(result.errorMessage).toEqual(errorMessage);
+  });
+});
