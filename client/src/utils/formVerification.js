@@ -37,14 +37,16 @@ export default class FormValidation {
               isValid: false,
               errorMessage: "Please enter a valid phone number"
             });
+        break;
       case "EMAIL":
         testResult = this.validateEmail();
         testResult
           ? (this.result = { ...this.result, isValid: testResult })
           : (this.result = {
               isValid: false,
-              errorMessage: "Please enter a valid phone number"
+              errorMessage: "Please enter a valid email address"
             });
+        break;
       default:
         break;
     }
