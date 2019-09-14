@@ -1,20 +1,29 @@
 export default class FormValidation {
-  constructor(input, type = "NAME") {
-    this.input = input;
+  constructor(type = "NAME") {
+    this.input = "";
     this.type = type;
     this.result = {
       isValid: null,
       errorMessage: null
     };
-    this.sanitizeInput();
   }
 
-  validate() {
+  validate(input) {
+    // Set input before validating
+    this.input = input;
+    this.sanitizeInput();
+
+    // check if empty and return error
+    this.isEmpty();
+    // exit early if is empty
+    if (this.stringIsEmpty) return this.result;
+
+    let testResult;
     switch (this.type) {
       case "NAME":
         testResult = this.validateName();
         testResult
-          ? (this.result = { ...this.result })
+          ? (this.result = { ...this.result, isValid: testResult })
           : (this.result = {
               isValid: false,
               errorMessage: "Please enter a valid name"
@@ -23,7 +32,7 @@ export default class FormValidation {
       case "PHONE":
         testResult = this.validatePhoneNumber();
         testResult
-          ? (this.result = { ...this.result })
+          ? (this.result = { ...this.result, isValid: testResult })
           : (this.result = {
               isValid: false,
               errorMessage: "Please enter a valid phone number"
@@ -31,7 +40,7 @@ export default class FormValidation {
       case "EMAIL":
         testResult = this.validateEmail();
         testResult
-          ? (this.result = { ...this.result })
+          ? (this.result = { ...this.result, isValid: testResult })
           : (this.result = {
               isValid: false,
               errorMessage: "Please enter a valid phone number"
@@ -43,14 +52,17 @@ export default class FormValidation {
     return this.result;
   }
 
-  // Getter
-  input() {
-    return this.input;
-  }
-
-  // Checks if input is empty should return true if empty
+  // Checks if input is empty
   isEmpty() {
-    return this.input === "";
+    if (this.input.length === 0) {
+      // Set error message
+      this.result = {
+        isValid: false,
+        errorMessage: "Input cannot be left empty"
+      };
+      // set error string boolean
+      this.stringIsEmpty = true;
+    }
   }
 
   // Removes leading spaces and lower cases input
