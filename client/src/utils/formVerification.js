@@ -10,6 +10,9 @@ export default class FormValidation {
 
   validate(input) {
     // Set input before validating
+    if (input === undefined) {
+      return this.result;
+    }
     this.input = input;
     this.sanitizeInput();
 
