@@ -14,8 +14,43 @@ const validateName = e => {
   return result.errorMessage;
 };
 
+const validatePhone = e => {
+  const nameInput = new FormValidation("PHONE");
+  const result = nameInput.validate(e);
+  return result.errorMessage;
+};
+
+const validateEmail = e => {
+  const nameInput = new FormValidation("EMAIL");
+  const result = nameInput.validate(e);
+  return result.errorMessage;
+};
+
 const nameInput = ({ input, meta }) => (
-  <Input {...input} type="text" errorMessage={meta.touched && meta.error} />
+  <Input
+    {...input}
+    type="text"
+    id="name"
+    errorMessage={meta.touched && meta.error}
+  />
+);
+
+const phoneInput = ({ input, meta }) => (
+  <Input
+    {...input}
+    type="text"
+    id="phone"
+    errorMessage={meta.touched && meta.error}
+  />
+);
+
+const emailInput = ({ input, meta }) => (
+  <Input
+    {...input}
+    type="text"
+    id="email"
+    errorMessage={meta.touched && meta.error}
+  />
 );
 
 const Contact = () => (
@@ -26,10 +61,16 @@ const Contact = () => (
         <div className="Contact__content">
           <form onSubmit={handleSubmit}>
             <h2>Contact Us</h2>
+            <Field name="name" component={nameInput} validate={validateName} />
             <Field
-              name="customer_id"
-              component={nameInput}
-              validate={validateName}
+              name="phone"
+              component={phoneInput}
+              validate={validatePhone}
+            />
+            <Field
+              name="email"
+              component={emailInput}
+              validate={validateEmail}
             />
             <button type="submit">Submit</button>
           </form>
