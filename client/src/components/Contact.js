@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Form, Field } from "react-final-form";
 import Input from "./Input";
 import "styles/components/ContactStyles.scss";
@@ -58,22 +58,59 @@ const Contact = () => (
     onSubmit={onSubmit}
     render={({ handleSubmit }) => (
       <div className="Contact">
-        <div className="Contact__content">
-          <form onSubmit={handleSubmit}>
-            <h2>Contact Us</h2>
-            <Field name="name" component={nameInput} validate={validateName} />
-            <Field
-              name="phone"
-              component={phoneInput}
-              validate={validatePhone}
-            />
-            <Field
-              name="email"
-              component={emailInput}
-              validate={validateEmail}
-            />
-            <button type="submit">Submit</button>
-          </form>
+        <div className="Contact__box">
+          <h2 className="Contact__header">Contact Us</h2>
+          <div className="Contact__content">
+            <form className="Contact__form" onSubmit={handleSubmit}>
+              <Field
+                name="name"
+                component={nameInput}
+                validate={validateName}
+              />
+              <Field
+                name="phone"
+                component={phoneInput}
+                validate={validatePhone}
+              />
+              <Field
+                name="email"
+                component={emailInput}
+                validate={validateEmail}
+              />
+              <button className="btn btn__tertiary" type="submit">
+                Submit
+              </button>
+            </form>
+
+            <div className="Contact__info">
+              <p className="Contact__message">
+                Facere minima tempore rem quo necessitatibus culpa minus
+                recusandae!
+              </p>
+              <ul className="Contact__list">
+                <li className="Contact__item">
+                  <i className="fas fa-caret-right"></i>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                </li>
+                <li className="Contact__item">
+                  <i className="fas fa-caret-right"></i>
+                  Perspiciatis, fuga ratione enim natus iusto possimus.
+                </li>
+                <li className="Contact__item">
+                  <i className="fas fa-caret-right"></i>
+                  Autem dicta, accusantium id incidunt quis alias modi.
+                </li>
+                <li className="Contact__item">
+                  <i className="fas fa-caret-right"></i>
+                  Sit amet consectetur adipisicing elit.
+                </li>
+                <li className="Contact__item">
+                  <i className="fas fa-caret-right"></i>
+                  Esciunt eum nemo rem maxime enim.
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     )}

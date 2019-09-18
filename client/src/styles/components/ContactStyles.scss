@@ -10,10 +10,77 @@
   justify-content: center;
   align-items: center;
 
-  &__content {
-    height: 40rem;
-    width: 80rem;
+  &__box {
     background-color: rgba($color-light, 0.95);
+    padding: 7rem;
     border-radius: 1px;
+  }
+
+  &__header {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  // Input class comes from react-final-form
+  &__form .Input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+
+  &__form label {
+    margin-bottom: 0.5rem;
+  }
+
+  &__form input {
+    box-sizing: inherit;
+    border: 2px solid transparent;
+    background-color: #e0e0e0;
+    padding: 1rem;
+    border-radius: 1px;
+    width: 30rem;
+
+    &:focus {
+      border: 2px solid $color-primary;
+    }
+  }
+
+  &__form span {
+    color: red;
+    font-size: 1.4rem;
+  }
+
+  &__info {
+    margin-left: 6rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__message {
+    color: $color-primary;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  &__list {
+    list-style: none;
+    padding-left: 3rem;
+  }
+
+  &__item {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    color: $color-secondary;
+  }
+
+  &__item i {
+    color: $color-primary;
+    font-size: 2rem;
+    margin-right: 1rem;
   }
 }
