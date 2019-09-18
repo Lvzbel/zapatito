@@ -9,6 +9,7 @@
   letter-spacing: 0.5rem;
   border-radius: 1px;
   transition: all 0.2s ease-in;
+  border: none;
 
   &__primary {
     background-color: $color-dark;
@@ -27,6 +28,15 @@
     &:hover {
       background-color: $color-dark;
       color: $color-light;
+    }
+  }
+
+  &__tertiary {
+    background-color: $color-primary;
+    color: $color-light;
+
+    &:hover {
+      background-color: darken($color-primary, 5%);
     }
   }
 }
