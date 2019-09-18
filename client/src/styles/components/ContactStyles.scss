@@ -23,6 +23,7 @@
 
   &__content {
     display: flex;
+    letter-spacing: 1px;
   }
 
   // Input class comes from react-final-form
@@ -37,6 +38,7 @@
   }
 
   &__form input {
+    font-size: 1.7rem;
     box-sizing: inherit;
     border: 2px solid transparent;
     background-color: #e0e0e0;
@@ -73,7 +75,6 @@
 
   &__item {
     font-size: 1.5rem;
-    letter-spacing: 1px;
     margin-bottom: 2rem;
     color: $color-secondary;
   }
