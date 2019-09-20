@@ -9,7 +9,7 @@ export class MainNav extends Component {
       <nav className="MainNav">
         <div className="MainNav__container container">
           <LinkRouter className="MainNav__logo" to="/">
-            <p>Zapatio</p>
+            <p>Zapatito</p>
           </LinkRouter>
           <ul className="MainNav__links">
             <li className="MainNav__link">
