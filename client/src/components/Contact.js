@@ -57,7 +57,7 @@ const Contact = () => (
   <Form
     onSubmit={onSubmit}
     render={({ handleSubmit }) => (
-      <div className="Contact">
+      <div className="Contact" data-aos-duration="1000" data-aos="fade-down">
         <div className="Contact__box">
           <h2 className="Contact__header">Contact Us</h2>
           <div className="Contact__content">
