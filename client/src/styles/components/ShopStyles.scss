@@ -1,0 +1,25 @@
+.Shop {
+  margin-top: 10rem;
+
+  &__banner {
+    width: 100%;
+    height: 40rem;
+    background-image: url("../../img/shop-banner.jpg");
+    background-size: cover;
+    background-position: bottom;
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  &__filter {
+    flex-basis: 25%;
+    background-color: green;
+  }
+
+  &__items {
+    flex-basis: 75%;
+    background-color: yellowgreen;
+  }
+}
