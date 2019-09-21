@@ -24,6 +24,7 @@ export class Home extends Component {
     return this.props.productsSale.map(item => (
       <ProductCard
         key={item.id}
+        id={item.id}
         name={item.name}
         image={`/images/${item.image}.jpg`}
         price={item.price}
