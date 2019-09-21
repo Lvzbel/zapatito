@@ -4,11 +4,13 @@ import {
   FETCH_BACKPACKS,
   FETCH_SHIRTS,
   FETCH_PANTS,
-  FETCH_SALE
+  FETCH_SALE,
+  FETCH_ITEM
 } from "../actions/types";
 
 const INITIAL_STATE = {
   productsAll: [],
+  productsRecent: [],
   productsShoes: [],
   productsBackpacks: [],
   productsShirts: [],
@@ -22,6 +24,11 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         productsAll: action.payload
+      };
+    case FETCH_ITEM:
+      return {
+        ...state,
+        productsRecent: action.payload
       };
     case FETCH_SHOES:
       return {
