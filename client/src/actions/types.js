@@ -6,3 +6,4 @@ export const FETCH_BACKPACKS = "FETCH_BACKPACKS";
 export const FETCH_SHIRTS = "FETCH_SHIRTS";
 export const FETCH_PANTS = "FETCH_PANTS";
 export const FETCH_SALE = "FETCH_SALE";
+export const FETCH_ITEM = "FETCH_ITEM";
