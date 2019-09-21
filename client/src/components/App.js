@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navigation from "./Navigation";
 import Home from "./Home";
 import Shop from "./Shop";
+import Item from "./Item";
 import Sale from "./Sale";
 import About from "./About";
 import Contact from "./Contact";
@@ -15,6 +16,7 @@ export class App extends Component {
         <Navigation />
         <main>
           <Switch>
+            <Route path="/shop/item/:id" component={Item} />
             <Route path="/shop" component={Shop} />
             <Route path="/sale" component={Sale} />
             <Route path="/about" component={About} />
