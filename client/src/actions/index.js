@@ -6,7 +6,8 @@ import {
   FETCH_BACKPACKS,
   FETCH_SHIRTS,
   FETCH_PANTS,
-  FETCH_SALE
+  FETCH_SALE,
+  FETCH_ITEM
 } from "./types";
 const axios = require("axios");
 
@@ -65,4 +66,9 @@ export const fetchPants = () => async dispatch => {
 export const fetchSale = () => async dispatch => {
   const response = await axios.get(`${api}/sale`);
   dispatch({ type: FETCH_SALE, payload: response.data });
+};
+
+export const fetchItem = id => async dispatch => {
+  const response = await axios.get(`${api}/item/${id}`);
+  dispatch({ type: FETCH_ITEM, payload: response.data });
 };
