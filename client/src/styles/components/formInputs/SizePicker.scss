@@ -1,0 +1,37 @@
+@import "../../base/settings";
+
+.SizePicker {
+  width: 100%;
+
+  &__container {
+    display: flex;
+  }
+
+  &__label {
+    cursor: pointer;
+    display: inline-block;
+    width: 90%;
+    background-color: $color-background;
+    padding: 1rem;
+    font-size: 1.6rem;
+  }
+
+  &__button {
+    cursor: pointer;
+    display: inline-block;
+    width: 10%;
+    background-color: darken($color-background, 10);
+    border: none;
+  }
+
+  &__options {
+    background-color: lighten($color-background, 10);
+    display: flex;
+  }
+
+  &__option {
+    height: 4rem;
+    width: 4rem;
+    border: 1px solid green;
+  }
+}

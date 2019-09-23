@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchItem } from "../actions/index";
 import "styles/components/ItemStyles.scss";
+import SizePicker from "components/formInputs/SizePicker";
 
 export class Item extends Component {
   componentDidMount() {
@@ -24,6 +25,7 @@ export class Item extends Component {
                   alt={item.name}
                 />
               </div>
+
               <div className="Item__description">
                 <div className="Item__header">
                   <h5 className="Item__name">{item.name}</h5>
@@ -31,6 +33,10 @@ export class Item extends Component {
                 </div>
                 <hr />
                 <p className="Item__category">{item.category}</p>
+
+                <form className="Item_form">
+                  <SizePicker />
+                </form>
               </div>
             </div>
           </div>
