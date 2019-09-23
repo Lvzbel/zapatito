@@ -10,28 +10,36 @@
   &__label {
     cursor: pointer;
     display: inline-block;
-    width: 90%;
-    background-color: $color-background;
-    padding: 1rem;
-    font-size: 1.6rem;
-  }
-
-  &__button {
-    cursor: pointer;
-    display: inline-block;
-    width: 10%;
-    background-color: darken($color-background, 10);
-    border: none;
+    width: 100%;
+    font-size: 2rem;
+    color: $color-primary;
   }
 
   &__options {
     background-color: lighten($color-background, 10);
     display: flex;
+    padding: 1rem;
+  }
+
+  &__radio {
+    display: none;
   }
 
   &__option {
     height: 4rem;
     width: 4rem;
-    border: 1px solid green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-background;
+
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__radio[type="radio"]:checked + &__option {
+    background-color: $color-primary;
+    color: $color-light;
   }
 }
