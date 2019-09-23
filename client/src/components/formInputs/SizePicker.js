@@ -18,7 +18,7 @@ export class SizePicker extends Component {
             id="xl"
           />
           <label htmlFor="xl" className="SizePicker__option">
-            XL
+            xl
           </label>
           <input
             className="SizePicker__radio"
