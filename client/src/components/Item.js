@@ -13,7 +13,6 @@ export class Item extends Component {
 
   render() {
     const item = this.props.productsItem[this.props.productsItem.length - 1];
-    console.log(item);
     if (item) {
       return (
         <div className="Item">
