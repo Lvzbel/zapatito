@@ -19,9 +19,6 @@ export class MainNav extends Component {
               <Link to="/shop" content="shop" funtional={true} />
             </li>
             <li className="MainNav__link">
-              <Link to="/sale" content="sale" funtional={true} />
-            </li>
-            <li className="MainNav__link">
               <Link to="/about" content="about us" funtional={true} />
             </li>
             <li className="MainNav__link">
