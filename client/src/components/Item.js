@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { fetchItem } from "../actions/index";
 import "styles/components/ItemStyles.scss";
 import SizePicker from "components/formInputs/SizePicker";
+import QuatityInput from "components/formInputs/QuatityInput";
 
 export class Item extends Component {
   componentDidMount() {
@@ -36,6 +37,7 @@ export class Item extends Component {
 
                 <form className="Item_form">
                   <SizePicker />
+                  <QuatityInput />
                 </form>
               </div>
             </div>
