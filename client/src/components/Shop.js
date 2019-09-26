@@ -11,9 +11,8 @@ export class Shop extends Component {
 
   renderItems() {
     return this.props.productsAll.slice(1, 22).map(item => (
-      <div className="Shop__item">
+      <div className="Shop__item" key={item.id}>
         <ProductCard
-          key={item.id}
           id={item.id}
           image={`/images/${item.image}.jpg`}
           price={item.price}
@@ -24,7 +23,6 @@ export class Shop extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="Shop">
         <div className="Shop__banner"></div>
