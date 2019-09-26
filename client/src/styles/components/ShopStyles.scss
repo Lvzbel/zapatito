@@ -15,7 +15,9 @@
 
   &__filter {
     flex-basis: 25%;
-    background-color: green;
+    height: 100%;
+    padding-top: 5rem;
+    position: relative;
   }
 
   &__items {
