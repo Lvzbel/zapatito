@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchAll } from "actions";
 import ProductCard from "components/ProductCard";
+import SideBar from "components/nav/SideBar";
 import "styles/components/ShopStyles.scss";
 
 export class Shop extends Component {
@@ -14,6 +15,7 @@ export class Shop extends Component {
       <div className="Shop__item" key={item.id}>
         <ProductCard
           id={item.id}
+          name={item.name}
           image={`/images/${item.image}.jpg`}
           price={item.price}
           category={item.category}
@@ -27,7 +29,9 @@ export class Shop extends Component {
       <div className="Shop">
         <div className="Shop__banner"></div>
         <div className="Shop__content container">
-          <aside className="Shop__filter">Filter</aside>
+          <aside className="Shop__filter">
+            <SideBar />
+          </aside>
           <div className="Shop__items">
             {this.props.productsAll && this.renderItems()}
           </div>
