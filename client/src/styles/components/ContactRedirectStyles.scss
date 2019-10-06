@@ -6,7 +6,13 @@
   height: 80vh;
   display: flex;
   align-items: center;
-
+  background-image: linear-gradient(
+      rgba($color-light, 0.8),
+      rgba($color-light, 0.8)
+    ),
+    url("../../img/contact-redirect.jpg");
+  background-size: cover;
+  background-position: center;
   &__container {
   }
 
