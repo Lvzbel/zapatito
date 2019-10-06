@@ -6,8 +6,7 @@ import FormValidation from "../utils/formVerification";
 
 class Contact extends Component {
   onSubmit = e => {
-    console.log(e);
-    this.props.history.push("/");
+    this.props.history.push(`/form-redirect/${e.name}`);
   };
 
   validateName = e => {
