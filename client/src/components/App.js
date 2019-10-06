@@ -7,6 +7,7 @@ import Item from "./Item";
 import About from "./About";
 import Contact from "./Contact";
 import Footer from "./Footer";
+import ContactRedirect from "./ContacRedirect";
 
 export class App extends Component {
   render() {
@@ -19,6 +20,10 @@ export class App extends Component {
             <Route path="/shop" component={Shop} />
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
+            <Route
+              path="/form-redirect/:customer"
+              component={ContactRedirect}
+            />
             <Route path="/" strict component={Home} />
           </Switch>
         </main>
