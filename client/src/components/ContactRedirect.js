@@ -11,7 +11,11 @@ export class ContactRedirect extends Component {
   render() {
     return (
       <div className="ContactRedirect">
-        <div className="ContactRedirect__container container">
+        <div
+          className="ContactRedirect__container container"
+          data-aos="fade-down-right"
+          data-aos-duration="2000"
+        >
           <h1 className="ContactRedirect__main-header">Thank you!</h1>
           <h3 className="ContactRedirect__message">
             <span className="ContactRedirect__customer">
