@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import "styles/components/ContactRedirectStyles.scss";
 
 export class ContactRedirect extends Component {
+  componentDidMount() {
+    setTimeout(() => {
+      this.props.history.push("/");
+    }, 5000);
+  }
   render() {
     return (
       <div className="ContactRedirect">
