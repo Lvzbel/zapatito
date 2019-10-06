@@ -7,7 +7,7 @@ import Item from "./Item";
 import About from "./About";
 import Contact from "./Contact";
 import Footer from "./Footer";
-import ContactRedirect from "./ContacRedirect";
+import ContactRedirect from "./ContactRedirect";
 
 export class App extends Component {
   render() {
