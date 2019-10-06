@@ -3,6 +3,7 @@ import "styles/components/ContactRedirectStyles.scss";
 
 export class ContactRedirect extends Component {
   componentDidMount() {
+    // Will redirect home after 5 seconds
     setTimeout(() => {
       this.props.history.push("/");
     }, 5000);
