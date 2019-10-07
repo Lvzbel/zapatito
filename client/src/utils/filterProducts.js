@@ -73,11 +73,3 @@ class FilterProducts {
     this.setProducts(sortedResult);
   }
 }
-
-const db = require("../../../db/products.json");
-
-const test = new FilterProducts(db.products);
-test.byCategory("shoes");
-test.byPrice([50, 99]);
-test.sortBy("inc");
-console.log(test.getProducts());
