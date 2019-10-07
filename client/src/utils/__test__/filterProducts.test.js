@@ -6,7 +6,7 @@ describe("Checks if input is being filtered properly", () => {
     expect(testClass).toBeInstanceOf(FilterProducts);
   });
 
-  it("checks if is filtered by price correctly", () => {
+  it("checks if is filtered by price", () => {
     const db = [
       { price: "75" },
       { price: "60" },
@@ -20,7 +20,7 @@ describe("Checks if input is being filtered properly", () => {
     expect(testPriceRange.getProducts().length).toEqual(3);
   });
 
-  it("checks if is filtered by category correctly", () => {
+  it("checks if is filtered by category", () => {
     const db = [
       { category: "shoes" },
       { category: "shoes" },
@@ -31,5 +31,20 @@ describe("Checks if input is being filtered properly", () => {
     const testCategory = new FilterProducts(db);
     testCategory.byCategory("shoes");
     expect(testCategory.getProducts().length).toEqual(2);
+  });
+
+  it("checks if is filtered by price and category", () => {
+    const db = [
+      { price: "75", category: "shoes" },
+      { price: "60", category: "shoes" },
+      { price: "77", category: "shoes" },
+      { price: "80", category: "backpacks" },
+      { price: "81", category: "pants" }
+    ];
+
+    const testCategoryPrice = new FilterProducts(db);
+    testCategoryPrice.byPrice([75, 80]);
+    testCategoryPrice.byCategory("shoes");
+    expect(testCategoryPrice.getProducts().length).toEqual(2);
   });
 });
