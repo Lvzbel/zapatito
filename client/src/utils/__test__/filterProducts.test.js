@@ -19,4 +19,17 @@ describe("Checks if input is being filtered properly", () => {
     testPriceRange.byPrice([75, 80]);
     expect(testPriceRange.getItems().length).toEqual(3);
   });
+
+  xit("checks if is filtered by category correctly", () => {
+    const db = [
+      { category: "shoes" },
+      { category: "shoes" },
+      { category: "backpacks" },
+      { category: "pants" }
+    ];
+
+    const testCategory = new FilterProducts(db);
+    testCategory.byCategory("shoes");
+    expect(testCategory.getItems().length).toEqual(2);
+  });
 });
