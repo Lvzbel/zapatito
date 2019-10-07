@@ -4,13 +4,21 @@ export default class FilterProducts {
     this.filteredProducts = [];
   }
 
+  getItems() {
+    return this.filteredProducts;
+  }
+
+  setItems(filteredItems) {
+    this.filteredProducts = filteredItems;
+  }
+
   byPrice([low, high]) {
     const filteredByPrice = this.products.filter(product => {
       const productPrice = parseFloat(product.price);
       return productPrice >= low && productPrice <= high;
     });
 
-    this.filteredProducts = filteredByPrice;
+    this.setItems(filteredByPrice);
   }
 
   byCategory(category) {
@@ -18,10 +26,6 @@ export default class FilterProducts {
       return category === product.category;
     });
 
-    this.filteredProducts = filteredByCategory;
-  }
-
-  getItems() {
-    return this.filteredProducts;
+    this.setItems(filteredByCategory);
   }
 }
