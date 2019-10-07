@@ -20,7 +20,7 @@ describe("Checks if input is being filtered properly", () => {
     expect(testPriceRange.getItems().length).toEqual(3);
   });
 
-  xit("checks if is filtered by category correctly", () => {
+  it("checks if is filtered by category correctly", () => {
     const db = [
       { category: "shoes" },
       { category: "shoes" },

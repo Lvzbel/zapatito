@@ -13,6 +13,14 @@ export default class FilterProducts {
     this.filteredProducts = filteredByPrice;
   }
 
+  byCategory(category) {
+    const filteredByCategory = this.products.filter(product => {
+      return category === product.category;
+    });
+
+    this.filteredProducts = filteredByCategory;
+  }
+
   getItems() {
     return this.filteredProducts;
   }
