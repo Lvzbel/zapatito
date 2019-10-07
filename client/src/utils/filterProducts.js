@@ -1,15 +1,14 @@
 export default class FilterProducts {
   constructor(products) {
     this.products = products;
-    this.filteredProducts = [];
   }
 
-  getItems() {
-    return this.filteredProducts;
+  getProducts() {
+    return this.products;
   }
 
-  setItems(filteredItems) {
-    this.filteredProducts = filteredItems;
+  setProducts(filteredItems) {
+    this.products = filteredItems;
   }
 
   byPrice([low, high]) {
@@ -18,7 +17,7 @@ export default class FilterProducts {
       return productPrice >= low && productPrice <= high;
     });
 
-    this.setItems(filteredByPrice);
+    this.setProducts(filteredByPrice);
   }
 
   byCategory(category) {
@@ -26,6 +25,6 @@ export default class FilterProducts {
       return category === product.category;
     });
 
-    this.setItems(filteredByCategory);
+    this.setProducts(filteredByCategory);
   }
 }

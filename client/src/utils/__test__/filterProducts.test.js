@@ -17,7 +17,7 @@ describe("Checks if input is being filtered properly", () => {
 
     const testPriceRange = new FilterProducts(db);
     testPriceRange.byPrice([75, 80]);
-    expect(testPriceRange.getItems().length).toEqual(3);
+    expect(testPriceRange.getProducts().length).toEqual(3);
   });
 
   it("checks if is filtered by category correctly", () => {
@@ -30,6 +30,6 @@ describe("Checks if input is being filtered properly", () => {
 
     const testCategory = new FilterProducts(db);
     testCategory.byCategory("shoes");
-    expect(testCategory.getItems().length).toEqual(2);
+    expect(testCategory.getProducts().length).toEqual(2);
   });
 });
