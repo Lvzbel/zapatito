@@ -3,10 +3,6 @@ import UrlParams from "utils/urlParams";
 import "styles/components/nav/SideBarStyles.scss";
 
 export class SideBar extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.setPriceRange = this.setPriceRange.bind(this);
-  // }
   setPriceRange = (e, min, max) => {
     const priceObject = { price_min: min, price_max: max };
     const currentParams = UrlParams.setParam(
