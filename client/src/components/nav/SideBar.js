@@ -11,22 +11,22 @@ export class SideBar extends Component {
           <h5 className="SideBar__block--heading">SHOP BY PRICE</h5>
           <ul className="SideBar__nav-list">
             <li className="SideBar__nav-item">
-              <a className="SideBar__link" href="#">
+              <button className="SideBar__link" href="#">
                 <i className="fas fa-angle-right"></i>
                 $0.00 - $50.00
-              </a>
+              </button>
             </li>
             <li className="SideBar__nav-item">
-              <a className="SideBar__link" href="#">
+              <button className="SideBar__link" href="#">
                 <i className="fas fa-angle-right"></i>
                 $61.00 - $100.00
-              </a>
+              </button>
             </li>
             <li className="SideBar__nav-item">
-              <a className="SideBar__link" href="#">
+              <button className="SideBar__link" href="#">
                 <i className="fas fa-angle-right"></i>
                 $101.00 - $150.00
-              </a>
+              </button>
             </li>
           </ul>
         </div>
@@ -35,34 +35,34 @@ export class SideBar extends Component {
           <h5 className="SideBar__block--heading">SHOP BY CATEGORY</h5>
           <ul className="SideBar__nav-list">
             <li className="SideBar__nav-item">
-              <a className="SideBar__link" href="#">
+              <button className="SideBar__link" href="#">
                 <i className="fas fa-angle-right"></i>
                 SHOES
-              </a>
+              </button>
             </li>
             <li className="SideBar__nav-item">
-              <a className="SideBar__link" href="#">
+              <button className="SideBar__link" href="#">
                 <i className="fas fa-angle-right"></i>
                 BACKPACKS
-              </a>
+              </button>
             </li>
             <li className="SideBar__nav-item">
-              <a className="SideBar__link" href="#">
+              <button className="SideBar__link" href="#">
                 <i className="fas fa-angle-right"></i>
                 SHIRTS
-              </a>
+              </button>
             </li>
             <li className="SideBar__nav-item">
-              <a className="SideBar__link" href="#">
+              <button className="SideBar__link" href="#">
                 <i className="fas fa-angle-right"></i>
                 PANTS
-              </a>
+              </button>
             </li>
             <li className="SideBar__nav-item">
-              <a className="SideBar__link" href="#">
+              <button className="SideBar__link" href="#">
                 <i className="fas fa-angle-right"></i>
                 SHORTS
-              </a>
+              </button>
             </li>
           </ul>
         </div>
