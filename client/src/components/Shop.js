@@ -30,7 +30,7 @@ export class Shop extends Component {
         <div className="Shop__banner"></div>
         <div className="Shop__content container">
           <aside className="Shop__filter">
-            <SideBar />
+            <SideBar redirect={this.props.history.push} />
           </aside>
           <div className="Shop__items">
             {this.props.productsAll && this.renderItems()}
