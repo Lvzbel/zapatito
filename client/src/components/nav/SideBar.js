@@ -13,6 +13,16 @@ export class SideBar extends Component {
     this.props.redirect(`/shop/?${stringURL}`);
   };
 
+  setFilter = (e, filterType, value) => {
+    const filterObject = { [filterType]: value };
+    const currentParams = UrlParams.setParam(
+      filterObject,
+      window.location.search
+    );
+    const stringURL = UrlParams.buildURL(currentParams);
+    this.props.redirect(`/shop/?${stringURL}`);
+  };
+
   render() {
     return (
       <div className="SideBar">
@@ -55,33 +65,72 @@ export class SideBar extends Component {
           <h5 className="SideBar__block--heading">SHOP BY CATEGORY</h5>
           <ul className="SideBar__nav-list">
             <li className="SideBar__nav-item">
-              <button className="SideBar__link">
+              <button
+                className="SideBar__link"
+                onClick={e => this.setFilter(e, "category", "shoes")}
+              >
                 <i className="fas fa-angle-right"></i>
                 SHOES
               </button>
             </li>
             <li className="SideBar__nav-item">
-              <button className="SideBar__link">
+              <button
+                className="SideBar__link"
+                onClick={e => this.setFilter(e, "category", "backpacks")}
+              >
                 <i className="fas fa-angle-right"></i>
                 BACKPACKS
               </button>
             </li>
             <li className="SideBar__nav-item">
-              <button className="SideBar__link">
+              <button
+                className="SideBar__link"
+                onClick={e => this.setFilter(e, "category", "shirts")}
+              >
                 <i className="fas fa-angle-right"></i>
                 SHIRTS
               </button>
             </li>
             <li className="SideBar__nav-item">
-              <button className="SideBar__link">
+              <button
+                className="SideBar__link"
+                onClick={e => this.setFilter(e, "category", "pants")}
+              >
                 <i className="fas fa-angle-right"></i>
                 PANTS
               </button>
             </li>
             <li className="SideBar__nav-item">
-              <button className="SideBar__link">
+              <button
+                className="SideBar__link"
+                onClick={e => this.setFilter(e, "category", "shorts")}
+              >
                 <i className="fas fa-angle-right"></i>
                 SHORTS
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div className="SideBar__block">
+          <h5 className="SideBar__block--heading">SORT BY PRICE</h5>
+          <ul className="SideBar__nav-list">
+            <li className="SideBar__nav-item">
+              <button
+                className="SideBar__link"
+                onClick={e => this.setFilter(e, "order", "desc")}
+              >
+                <i className="fas fa-angle-right"></i>
+                Lower Price First
+              </button>
+            </li>
+            <li className="SideBar__nav-item">
+              <button
+                className="SideBar__link"
+                onClick={e => this.setFilter(e, "order", "inc")}
+              >
+                <i className="fas fa-angle-right"></i>
+                Highest Price First
               </button>
             </li>
           </ul>
