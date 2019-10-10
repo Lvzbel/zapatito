@@ -31,13 +31,19 @@ export class SideBar extends Component {
               </button>
             </li>
             <li className="SideBar__nav-item">
-              <button className="SideBar__link">
+              <button
+                className="SideBar__link"
+                onClick={e => this.setPriceRange(e, 51, 100)}
+              >
                 <i className="fas fa-angle-right"></i>
                 $51.00 - $100.00
               </button>
             </li>
             <li className="SideBar__nav-item">
-              <button className="SideBar__link">
+              <button
+                className="SideBar__link"
+                onClick={e => this.setPriceRange(e, 101, 150)}
+              >
                 <i className="fas fa-angle-right"></i>
                 $101.00 - $150.00
               </button>
