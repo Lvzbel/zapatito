@@ -1,13 +1,22 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchAll } from "actions";
+import UrlParams from "utils/urlParams";
 import ProductCard from "components/ProductCard";
 import SideBar from "components/nav/SideBar";
 import "styles/components/ShopStyles.scss";
 
 export class Shop extends Component {
   componentDidMount() {
-    this.props.fetchAll();
+    this.props.fetchAll(this.props.location.search);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.location.search !== this.props.location.search) {
+      const params = UrlParams.getParams(this.props.location.search);
+      this.props.fetchAll(params);
+    }
+    return;
   }
 
   renderItems() {
