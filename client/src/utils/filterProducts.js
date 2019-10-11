@@ -37,7 +37,7 @@ class FilterProducts {
     }
 
     if (filters.price_min && filters.price_max) {
-      this.sortPrice([filters.price_min, filters.price_max]);
+      this.byPrice([filters.price_min, filters.price_max]);
     }
 
     if (filters.order) {
