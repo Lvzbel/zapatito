@@ -31,7 +31,18 @@ class FilterProducts {
     this.products = products;
   }
 
-  getProducts() {
+  getProducts(filters = {}) {
+    if (filters.category) {
+      this.byCategory(filters.category);
+    }
+
+    if (filters.price_min && filters.price_max) {
+      this.sortPrice([filters.price_min, filters.price_max]);
+    }
+
+    if (filters.order) {
+      this.sortBy(filters.order);
+    }
     return this.products;
   }
 
@@ -73,3 +84,5 @@ class FilterProducts {
     this.setProducts(sortedResult);
   }
 }
+
+export default FilterProducts;
