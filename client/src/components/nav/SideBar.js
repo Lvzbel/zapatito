@@ -10,7 +10,7 @@ export class SideBar extends Component {
       window.location.search
     );
     const stringURL = UrlParams.buildURL(currentParams);
-    this.props.redirect(`/shop/?${stringURL}`);
+    this.props.redirect(`/shop?${stringURL}`);
   };
 
   setFilter = (e, filterType, value) => {
