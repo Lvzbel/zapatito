@@ -9,6 +9,7 @@ import {
   FETCH_SALE,
   FETCH_ITEM
 } from "./types";
+import FilterProducts from "utils/filterProducts";
 const axios = require("axios");
 
 const api = "/api";
@@ -33,10 +34,12 @@ export const signOut = () => {
 };
 
 // PRODUCT FETCHING
-export const fetchAll = () => async dispatch => {
+export const fetchAll = filters => async dispatch => {
   const response = await fetch(api);
   const data = await response.json();
-  dispatch({ type: FETCH_ALL, payload: data.products });
+  const testClass = new FilterProducts(data.products);
+  const payload = testClass.getProducts(filters);
+  dispatch({ type: FETCH_ALL, payload });
 };
 
 export const fetchShoes = () => async dispatch => {
