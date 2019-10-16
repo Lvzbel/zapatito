@@ -42,6 +42,14 @@ export class Shop extends Component {
     ));
   }
 
+  pagination() {
+    const indexOfLastPost = this.currentPage * this.postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - this.postsPerPage;
+    this.setState({
+      posts: this.props.productsAll.slice(indexOfFirstPost, indexOfLastPost)
+    });
+  }
+
   render() {
     return (
       <div className="Shop">
