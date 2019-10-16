@@ -24,6 +24,7 @@ export class Shop extends Component {
     if (prevProps.location.search !== this.props.location.search) {
       const params = UrlParams.getParams(this.props.location.search);
       this.props.fetchAll(params);
+      this.pagination();
     }
     return;
   }
@@ -43,11 +44,13 @@ export class Shop extends Component {
   }
 
   pagination() {
-    const indexOfLastPost = this.currentPage * this.postsPerPage;
-    const indexOfFirstPost = indexOfLastPost - this.postsPerPage;
-    this.setState({
-      posts: this.props.productsAll.slice(indexOfFirstPost, indexOfLastPost)
-    });
+    const indexOfLastPost = this.state.currentPage * this.state.postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - this.state.postsPerPage;
+    const showingPosts = this.props.productsAll.slice(
+      indexOfFirstPost,
+      indexOfLastPost
+    );
+    console.log(showingPosts);
   }
 
   render() {
