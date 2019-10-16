@@ -50,7 +50,9 @@ export class Shop extends Component {
       indexOfFirstPost,
       indexOfLastPost
     );
-    console.log(showingPosts);
+    this.setState((state, props) => ({
+      posts: showingPosts
+    }));
   }
 
   render() {
