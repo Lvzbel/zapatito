@@ -7,6 +7,15 @@ import SideBar from "components/nav/SideBar";
 import "styles/components/ShopStyles.scss";
 
 export class Shop extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      posts: [],
+      currentPage: 1,
+      postsPerPage: 20
+    };
+  }
+
   componentDidMount() {
     this.props.fetchAll(this.props.location.search);
   }
