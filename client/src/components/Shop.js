@@ -26,10 +26,11 @@ export class Shop extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     // Check if page number has changed
-    console.log(this.props.shopLoading);
+
     // Checks if async fetch has been completed before pagination is apply
     if (prevProps.shopLoading !== this.props.shopLoading) {
       this.pagination();
+      this.props.resetLoad();
     }
     if (prevProps.location.search !== this.props.location.search) {
       const params = UrlParams.getParams(this.props.location.search);
