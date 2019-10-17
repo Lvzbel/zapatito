@@ -4,6 +4,7 @@ import { fetchAll, resetLoad } from "actions";
 import UrlParams from "utils/urlParams";
 import ProductCard from "components/ProductCard";
 import SideBar from "components/nav/SideBar";
+import Pagination from "components/Pagination";
 import "styles/components/ShopStyles.scss";
 
 export class Shop extends Component {
@@ -25,8 +26,6 @@ export class Shop extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    // Check if page number has changed
-
     // Checks if async fetch has been completed before pagination is apply
     if (prevProps.shopLoading !== this.props.shopLoading) {
       this.pagination();
@@ -34,6 +33,11 @@ export class Shop extends Component {
     }
     if (prevProps.location.search !== this.props.location.search) {
       const params = UrlParams.getParams(this.props.location.search);
+
+      // Check if page number has changed
+      if (params.page) {
+        this.setState({ currentPage: parseInt(params.page) });
+      }
       this.props.fetchAll(params);
     }
     return;
@@ -75,6 +79,9 @@ export class Shop extends Component {
           </aside>
           <div className="Shop__items">
             {this.props.productsAll && this.renderItems()}
+            <div className="Shop__pagination">
+              <Pagination />
+            </div>
           </div>
         </div>
       </div>

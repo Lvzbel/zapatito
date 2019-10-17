@@ -33,4 +33,10 @@
     flex-basis: 30%;
     margin: 2rem 0;
   }
+
+  &__pagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }
