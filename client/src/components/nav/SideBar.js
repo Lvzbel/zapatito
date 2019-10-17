@@ -76,7 +76,7 @@ export class SideBar extends Component {
             <li className="SideBar__nav-item">
               <button
                 className="SideBar__link"
-                onClick={e => this.setFilter(e, "category", "backpacks")}
+                onClick={e => this.setFilter(e, "category", "backpack")}
               >
                 <i className="fas fa-angle-right"></i>
                 BACKPACKS
