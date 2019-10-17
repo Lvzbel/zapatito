@@ -1,0 +1,12 @@
+@import "../base/settings";
+
+.PageNumber {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  border: 2px solid $color-primary;
+  background-color: transparent;
+  border-radius: 2px;
+  padding: 0.5rem 1rem;
+  margin: 0 0.75rem;
+}
