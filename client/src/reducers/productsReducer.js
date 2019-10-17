@@ -10,6 +10,7 @@ import {
 
 const INITIAL_STATE = {
   productsAll: [],
+  shopLoading: true,
   productsRecent: [],
   productsShoes: [],
   productsBackpacks: [],
@@ -23,7 +24,8 @@ export default (state = INITIAL_STATE, action) => {
     case FETCH_ALL:
       return {
         ...state,
-        productsAll: action.payload
+        productsAll: action.payload,
+        shopLoading: false
       };
     case FETCH_ITEM:
       return {
