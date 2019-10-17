@@ -5,7 +5,8 @@ import {
   FETCH_SHIRTS,
   FETCH_PANTS,
   FETCH_SALE,
-  FETCH_ITEM
+  FETCH_ITEM,
+  RESET_LOAD
 } from "../actions/types";
 
 const INITIAL_STATE = {
@@ -31,6 +32,11 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         productsRecent: action.payload
+      };
+    case RESET_LOAD:
+      return {
+        ...state,
+        shopLoading: true
       };
     case FETCH_SHOES:
       return {

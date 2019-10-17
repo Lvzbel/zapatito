@@ -7,7 +7,8 @@ import {
   FETCH_SHIRTS,
   FETCH_PANTS,
   FETCH_SALE,
-  FETCH_ITEM
+  FETCH_ITEM,
+  RESET_LOAD
 } from "./types";
 import FilterProducts from "utils/filterProducts";
 const axios = require("axios");
@@ -40,6 +41,10 @@ export const fetchAll = filters => async dispatch => {
   const testClass = new FilterProducts(data.products);
   const payload = testClass.getProducts(filters);
   dispatch({ type: FETCH_ALL, payload });
+};
+
+export const resetLoad = () => async dispatch => {
+  dispatch({ type: RESET_LOAD });
 };
 
 export const fetchShoes = () => async dispatch => {

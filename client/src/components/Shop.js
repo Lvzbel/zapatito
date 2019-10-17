@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchAll } from "actions";
+import { fetchAll, resetLoad } from "actions";
 import UrlParams from "utils/urlParams";
 import ProductCard from "components/ProductCard";
 import SideBar from "components/nav/SideBar";
@@ -20,9 +20,13 @@ export class Shop extends Component {
     this.props.fetchAll(this.props.location.search);
   }
 
+  componentWillUnmount() {
+    this.props.resetLoad();
+  }
+
   componentDidUpdate(prevProps, prevState) {
     // Check if page number has changed
-
+    console.log(this.props.shopLoading);
     // Checks if async fetch has been completed before pagination is apply
     if (prevProps.shopLoading !== this.props.shopLoading) {
       this.pagination();
@@ -86,5 +90,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { fetchAll }
+  { fetchAll, resetLoad }
 )(Shop);
