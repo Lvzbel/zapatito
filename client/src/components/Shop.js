@@ -12,7 +12,7 @@ export class Shop extends Component {
     this.state = {
       posts: [],
       currentPage: 1,
-      postsPerPage: 20
+      postsPerPage: 15
     };
   }
 
@@ -21,16 +21,21 @@ export class Shop extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
+    // Check if page number has changed
+
+    // Checks if async fetch has been completed before pagination is apply
+    if (prevProps.shopLoading !== this.props.shopLoading) {
+      this.pagination();
+    }
     if (prevProps.location.search !== this.props.location.search) {
       const params = UrlParams.getParams(this.props.location.search);
       this.props.fetchAll(params);
-      this.pagination();
     }
     return;
   }
 
   renderItems() {
-    return this.props.productsAll.slice(1, 22).map(item => (
+    return this.state.posts.map(item => (
       <div className="Shop__item" key={item.id}>
         <ProductCard
           id={item.id}
@@ -75,7 +80,7 @@ export class Shop extends Component {
 const mapStateToProps = state => {
   return {
     productsAll: state.products.productsAll,
-    productsFiltered: []
+    shopLoading: state.products.shopLoading
   };
 };
 
