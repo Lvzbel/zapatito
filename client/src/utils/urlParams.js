@@ -1,7 +1,7 @@
 import queryString from "query-string";
 
 // Example of query
-// ?category=shirt&price_min=0&price_max=50&order=desc
+// ?category=shirt&price_min=0&price_max=50&order=desc&page=1
 
 class UrlParams {
   static getParams(locationSearch) {
