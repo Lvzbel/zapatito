@@ -17,9 +17,16 @@ export class Shop extends Component {
     };
   }
 
+  setPageNumber(params) {
+    if (params.page) {
+      this.setState({ currentPage: parseInt(params.page) });
+    }
+  }
+
   componentDidMount() {
     const params = UrlParams.getParams(this.props.location.search);
     this.props.fetchAll(params);
+    this.setPageNumber(params);
   }
 
   componentWillUnmount() {
@@ -34,10 +41,11 @@ export class Shop extends Component {
     }
     if (prevProps.location.search !== this.props.location.search) {
       const params = UrlParams.getParams(this.props.location.search);
-
+      console.log("Params Changed:", params);
+      // this.setPageNumber(params);
       // Check if page number has changed
       if (params.page) {
-        this.setState({ currentPage: parseInt(params.page) });
+        this.setPageNumber(params);
       }
       this.props.fetchAll(params);
     }
