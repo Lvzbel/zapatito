@@ -18,7 +18,8 @@ export class Shop extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchAll(this.props.location.search);
+    const params = UrlParams.getParams(this.props.location.search);
+    this.props.fetchAll(params);
   }
 
   componentWillUnmount() {
