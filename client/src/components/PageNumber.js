@@ -12,6 +12,7 @@ export class PageNumber extends Component {
     );
     const stringURL = UrlParams.buildURL(currentParams);
     history.push(`/shop?${stringURL}`);
+    history.go();
   }
 
   render() {
