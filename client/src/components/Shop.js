@@ -101,7 +101,8 @@ export class Shop extends Component {
 const mapStateToProps = state => {
   return {
     productsAll: state.products.productsAll,
-    shopLoading: state.products.shopLoading
+    shopLoading: state.products.shopLoading,
+    productsPage: state.products.productsPage
   };
 };
 

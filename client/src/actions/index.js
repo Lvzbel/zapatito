@@ -8,7 +8,8 @@ import {
   FETCH_PANTS,
   FETCH_SALE,
   FETCH_ITEM,
-  RESET_LOAD
+  RESET_LOAD,
+  SET_PAGE
 } from "./types";
 import FilterProducts from "utils/filterProducts";
 const axios = require("axios");
@@ -31,6 +32,14 @@ export const signIn = (userId, name) => {
 export const signOut = () => {
   return {
     type: SIGN_OUT
+  };
+};
+
+// PAGE CHANGE
+export const setPage = newPage => {
+  return {
+    type: SET_PAGE,
+    payload: newPage
   };
 };
 
