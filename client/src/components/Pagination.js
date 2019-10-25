@@ -1,18 +1,47 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { setPage } from "actions/index";
 import PageNumber from "components/PageNumber";
 
 export class Pagination extends Component {
   render() {
+    const renderPageNumber = this.props.numberOfPages.map(page => {
+      return (
+        <PageNumber
+          number={page}
+          key={page}
+          selected={parseInt(this.props.currentPage) === page}
+          onClick={() => this.props.setPage(page)}
+        />
+      );
+    });
+
+    // const lastPage = this.props.numberOfPages.length - 1;
     return (
       <div className="Pagination">
-        <PageNumber number={1} />
-        <PageNumber number={2} />
-        <PageNumber number={3} />
-        <PageNumber number={4} />
-        <PageNumber number={5} />
+        <PageNumber
+          number="First"
+          selected={parseInt(this.props.currentPage) === 1}
+          onClick={() => this.props.setPage(1)}
+        />
+        {renderPageNumber}
+        <PageNumber
+          number="Last"
+          selected={parseInt(this.props.currentPage) === 2}
+          onClick={() => this.props.setPage(this.props.numberOfPages.length)}
+        />
       </div>
     );
   }
 }
 
-export default Pagination;
+const mapStateToProps = state => {
+  return {
+    currentPage: state.products.currentPage
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { setPage }
+)(Pagination);
