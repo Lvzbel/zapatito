@@ -19,7 +19,7 @@ const INITIAL_STATE = {
   productsShirts: [],
   productsPants: [],
   productsSale: [],
-  productsPage: 1
+  currentPage: 1
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -68,7 +68,7 @@ export default (state = INITIAL_STATE, action) => {
     case SET_PAGE:
       return {
         ...state,
-        productsPage: action.payload
+        currentPage: action.payload
       };
     default:
       return state;
