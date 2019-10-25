@@ -77,8 +77,15 @@ export class Shop extends Component {
   }
 
   numberOfPages() {
-    if (this.props.productsAll.length) {
-      return new Array(this.props.productsAll.length % this.state.postsPerPage);
+    if (this.props.productsAll) {
+      const totalPages = parseInt(
+        this.props.productsAll.length / this.state.postsPerPage
+      );
+      const pages = [];
+      for (let i = 1; i < totalPages; i++) {
+        pages.push(i);
+      }
+      return pages;
     } else {
       return [1];
     }
