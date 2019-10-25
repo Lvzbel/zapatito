@@ -6,10 +6,7 @@ export class PageNumber extends Component {
     const selected = this.props.selected ? " selected" : "";
 
     return (
-      <button
-        onClick={() => this.setPage(this.props.number)}
-        className={`PageNumber${selected}`}
-      >
+      <button onClick={this.props.onClick} className={`PageNumber${selected}`}>
         {this.props.number}
       </button>
     );
