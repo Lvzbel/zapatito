@@ -49,6 +49,10 @@ export class Shop extends Component {
       }
       this.props.fetchAll(params);
     }
+    // TESt
+    if (prevProps.currentPage !== this.props.currentPage) {
+      this.pagination();
+    }
     return;
   }
 
@@ -67,7 +71,7 @@ export class Shop extends Component {
   }
 
   pagination() {
-    const indexOfLastPost = this.state.currentPage * this.state.postsPerPage;
+    const indexOfLastPost = this.props.currentPage * this.state.postsPerPage;
     const indexOfFirstPost = indexOfLastPost - this.state.postsPerPage;
     const showingPosts = this.props.productsAll.slice(
       indexOfFirstPost,
