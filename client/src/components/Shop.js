@@ -41,15 +41,9 @@ export class Shop extends Component {
     }
     if (prevProps.location.search !== this.props.location.search) {
       const params = UrlParams.getParams(this.props.location.search);
-      console.log("Params Changed:", params);
-      // this.setPageNumber(params);
-      // Check if page number has changed
-      if (params.page) {
-        this.setPageNumber(params);
-      }
       this.props.fetchAll(params);
     }
-    // TESt
+    // Check if page number has changed
     if (prevProps.currentPage !== this.props.currentPage) {
       this.pagination();
     }
