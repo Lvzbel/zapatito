@@ -16,10 +16,12 @@ export class PageNumber extends Component {
   }
 
   render() {
+    const selected = this.props.selected ? " selected" : "";
+
     return (
       <button
         onClick={() => this.setPage(this.props.number)}
-        className="PageNumber"
+        className={`PageNumber${selected}`}
       >
         {this.props.number}
       </button>
