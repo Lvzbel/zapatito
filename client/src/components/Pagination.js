@@ -27,7 +27,9 @@ export class Pagination extends Component {
         {renderPageNumber}
         <PageNumber
           number="Last"
-          selected={parseInt(this.props.currentPage) === 2}
+          selected={
+            parseInt(this.props.currentPage) === this.props.numberOfPages.length
+          }
           onClick={() => this.props.setPage(this.props.numberOfPages.length)}
         />
       </div>
