@@ -76,6 +76,14 @@ export class Shop extends Component {
     }));
   }
 
+  numberOfPages() {
+    if (this.props.productsAll.length) {
+      return new Array(this.props.productsAll.length % this.state.postsPerPage);
+    } else {
+      return [1];
+    }
+  }
+
   render() {
     return (
       <div className="Shop">
@@ -87,7 +95,7 @@ export class Shop extends Component {
           <div className="Shop__items">
             {this.props.productsAll && this.renderItems()}
             <div className="Shop__pagination">
-              <Pagination />
+              <Pagination numberOfPages={this.numberOfPages()} />
             </div>
           </div>
         </div>
