@@ -46,6 +46,7 @@ export class Shop extends Component {
     // Check if page number has changed
     if (prevProps.currentPage !== this.props.currentPage) {
       this.pagination();
+      this.setPageParam();
     }
     return;
   }
@@ -90,6 +91,16 @@ export class Shop extends Component {
       return [1];
     }
   }
+
+  setPageParam = () => {
+    const pageObject = { page: this.props.currentPage };
+    const currentParams = UrlParams.setParam(
+      pageObject,
+      window.location.search
+    );
+    const stringURL = UrlParams.buildURL(currentParams);
+    this.props.history.push(`/shop?${stringURL}`);
+  };
 
   render() {
     return (
