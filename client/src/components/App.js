@@ -7,6 +7,7 @@ import Item from "./Item";
 import About from "./About";
 import Contact from "./Contact";
 import Footer from "./Footer";
+import NotFound from "./NotFound";
 import ContactRedirect from "./ContactRedirect";
 
 export class App extends Component {
@@ -26,6 +27,7 @@ export class App extends Component {
               component={ContactRedirect}
             />
             <Route exact path="/" strict component={Home} />
+            <Route component={NotFound} />
           </Switch>
         </main>
         <Footer />
