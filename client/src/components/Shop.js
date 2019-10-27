@@ -12,7 +12,6 @@ export class Shop extends Component {
     super(props);
     this.state = {
       posts: [],
-      currentPage: 1,
       postsPerPage: 15
     };
   }
