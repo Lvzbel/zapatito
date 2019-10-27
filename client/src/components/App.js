@@ -16,15 +16,16 @@ export class App extends Component {
         <Navigation />
         <main>
           <Switch>
-            <Route path="/shop/item/:id" component={Item} />
-            <Route path="/shop" component={Shop} />
-            <Route path="/about" component={About} />
-            <Route path="/contact" component={Contact} />
+            <Route exact path="/shop/item/:id" component={Item} />
+            <Route exact path="/shop" component={Shop} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/contact" component={Contact} />
             <Route
+              exact
               path="/form-redirect/:customer"
               component={ContactRedirect}
             />
-            <Route path="/" strict component={Home} />
+            <Route exact path="/" strict component={Home} />
           </Switch>
         </main>
         <Footer />
