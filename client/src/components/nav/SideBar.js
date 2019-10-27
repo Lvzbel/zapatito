@@ -58,6 +58,10 @@ export class SideBar extends Component {
                 $101.00 - $150.00
               </button>
             </li>
+            <li className="SideBar__nav-item">
+              <i className="fas fa-minus"></i>
+              <button className="SideBar__link">Reset Price Range</button>
+            </li>
           </ul>
         </div>
 
@@ -109,6 +113,10 @@ export class SideBar extends Component {
                 SHORTS
               </button>
             </li>
+            <li className="SideBar__nav-item">
+              <i className="fas fa-minus"></i>
+              <button className="SideBar__link">Reset Category</button>
+            </li>
           </ul>
         </div>
 
@@ -132,6 +140,18 @@ export class SideBar extends Component {
                 <i className="fas fa-angle-right"></i>
                 Highest Price First
               </button>
+            </li>
+            <li className="SideBar__nav-item">
+              <i className="fas fa-minus"></i>
+              <button className="SideBar__link">Reset Price Filter</button>
+            </li>
+          </ul>
+        </div>
+        <div className="SideBar__block">
+          <ul className="SideBar__nav-list">
+            <li className="SideBar__nav-item">
+              <i className="fas fa-trash-alt"></i>
+              <button className="SideBar__link">Reset All</button>
             </li>
           </ul>
         </div>
