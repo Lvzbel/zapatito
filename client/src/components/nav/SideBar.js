@@ -38,6 +38,10 @@ export class SideBar extends Component {
     this.props.redirect(`/shop?${stringURL}`);
   };
 
+  resetAll = () => {
+    this.props.redirect("/shop");
+  };
+
   render() {
     return (
       <div className="SideBar">
@@ -178,7 +182,9 @@ export class SideBar extends Component {
           <ul className="SideBar__nav-list">
             <li className="SideBar__nav-item">
               <i className="fas fa-trash-alt"></i>
-              <button className="SideBar__link">Reset All</button>
+              <button className="SideBar__link" onClick={this.resetAll}>
+                Reset All
+              </button>
             </li>
           </ul>
         </div>
