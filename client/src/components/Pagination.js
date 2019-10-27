@@ -16,7 +16,6 @@ export class Pagination extends Component {
       );
     });
 
-    // const lastPage = this.props.numberOfPages.length - 1;
     return (
       <div className="Pagination">
         <PageNumber
