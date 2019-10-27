@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchAll, resetLoad } from "actions";
+import { fetchAll, resetLoad, setPage } from "actions";
 import UrlParams from "utils/urlParams";
 import ProductCard from "components/ProductCard";
 import SideBar from "components/nav/SideBar";
@@ -15,12 +15,6 @@ export class Shop extends Component {
       currentPage: 1,
       postsPerPage: 15
     };
-  }
-
-  setPageNumber(params) {
-    if (params.page) {
-      this.setState({ currentPage: parseInt(params.page) });
-    }
   }
 
   componentDidMount() {
@@ -75,6 +69,12 @@ export class Shop extends Component {
     this.setState((state, props) => ({
       posts: showingPosts
     }));
+  }
+
+  setPageNumber(params) {
+    if (params.page) {
+      this.props.setPage(parseInt(params.page));
+    }
   }
 
   numberOfPages() {
@@ -132,5 +132,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { fetchAll, resetLoad }
+  { fetchAll, resetLoad, setPage }
 )(Shop);
