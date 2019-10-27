@@ -23,6 +23,14 @@ export class SideBar extends Component {
     this.props.redirect(`/shop?${stringURL}`);
   };
 
+  resetPriceRange = () => {
+    const currentParams = UrlParams.getParams(window.location.search);
+    delete currentParams.price_max;
+    delete currentParams.price_min;
+    const stringURL = UrlParams.buildURL(currentParams);
+    this.props.redirect(`/shop?${stringURL}`);
+  };
+
   render() {
     return (
       <div className="SideBar">
@@ -60,7 +68,9 @@ export class SideBar extends Component {
             </li>
             <li className="SideBar__nav-item">
               <i className="fas fa-minus"></i>
-              <button className="SideBar__link">Reset Price Range</button>
+              <button className="SideBar__link" onClick={this.resetPriceRange}>
+                Reset Price Range
+              </button>
             </li>
           </ul>
         </div>
