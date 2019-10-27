@@ -31,6 +31,13 @@ export class SideBar extends Component {
     this.props.redirect(`/shop?${stringURL}`);
   };
 
+  resetFilter = (e, filterType) => {
+    const currentParams = UrlParams.getParams(window.location.search);
+    delete currentParams[filterType];
+    const stringURL = UrlParams.buildURL(currentParams);
+    this.props.redirect(`/shop?${stringURL}`);
+  };
+
   render() {
     return (
       <div className="SideBar">
@@ -125,7 +132,12 @@ export class SideBar extends Component {
             </li>
             <li className="SideBar__nav-item">
               <i className="fas fa-minus"></i>
-              <button className="SideBar__link">Reset Category</button>
+              <button
+                className="SideBar__link"
+                onClick={e => this.resetFilter(e, "category")}
+              >
+                Reset Category
+              </button>
             </li>
           </ul>
         </div>
@@ -153,7 +165,12 @@ export class SideBar extends Component {
             </li>
             <li className="SideBar__nav-item">
               <i className="fas fa-minus"></i>
-              <button className="SideBar__link">Reset Price Filter</button>
+              <button
+                className="SideBar__link"
+                onClick={e => this.resetFilter(e, "order")}
+              >
+                Reset Price Filter
+              </button>
             </li>
           </ul>
         </div>
