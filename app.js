@@ -22,6 +22,14 @@ const saleFinder = db => {
 // STATIC FILES
 app.use(express.static(path.join(__dirname, "client/build")));
 
+// app.get("/*", function(req, res) {
+//   res.sendFile(path.join(__dirname, "client/public/index.html"), function(err) {
+//     if (err) {
+//       res.status(500).send(err);
+//     }
+//   });
+// });
+
 // STATIC IMAGES
 app.use("/images", express.static(path.join(__dirname, "img")));
 
@@ -61,6 +69,14 @@ app.get("/api/pants", (req, res) => {
 app.get("/api/sale", (req, res) => {
   const saleProducts = saleFinder(db.products);
   res.json(saleProducts);
+});
+
+app.get("/*", function(req, res) {
+  res.sendFile(path.join(__dirname, "client/build/index.html"), function(err) {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
 });
 
 const saleProducts = saleFinder(db.products);
