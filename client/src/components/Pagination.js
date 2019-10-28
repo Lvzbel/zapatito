@@ -2,10 +2,15 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setPage } from "actions/index";
 import PageNumber from "components/PageNumber";
+import Paginate from "utils/paginate";
 
 export class Pagination extends Component {
-  render() {
-    const renderPageNumber = this.props.numberOfPages.map(page => {
+  renderPageNumber = () => {
+    const paginatedPageNumbers = new Paginate(
+      this.props.currentPage,
+      this.props.numberOfPages
+    );
+    const renderPageNumber = paginatedPageNumbers.getPages().map(page => {
       return (
         <PageNumber
           number={page}
@@ -16,6 +21,10 @@ export class Pagination extends Component {
       );
     });
 
+    return renderPageNumber;
+  };
+
+  render() {
     return (
       <div className="Pagination">
         <PageNumber
@@ -23,7 +32,7 @@ export class Pagination extends Component {
           selected={parseInt(this.props.currentPage) === 1}
           onClick={() => this.props.setPage(1)}
         />
-        {renderPageNumber}
+        {this.renderPageNumber()}
         <PageNumber
           number="Last"
           selected={
