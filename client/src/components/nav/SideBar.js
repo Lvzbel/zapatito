@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { setPage } from "actions";
 import UrlParams from "utils/urlParams";
 import "styles/components/nav/SideBarStyles.scss";
 
@@ -9,6 +11,7 @@ export class SideBar extends Component {
       priceObject,
       window.location.search
     );
+    this.props.setPage(1);
     const stringURL = UrlParams.buildURL(currentParams);
     this.props.redirect(`/shop?${stringURL}`);
   };
@@ -19,6 +22,7 @@ export class SideBar extends Component {
       filterObject,
       window.location.search
     );
+    this.props.setPage(1);
     const stringURL = UrlParams.buildURL(currentParams);
     this.props.redirect(`/shop?${stringURL}`);
   };
@@ -27,6 +31,7 @@ export class SideBar extends Component {
     const currentParams = UrlParams.getParams(window.location.search);
     delete currentParams.price_max;
     delete currentParams.price_min;
+    this.props.setPage(1);
     const stringURL = UrlParams.buildURL(currentParams);
     this.props.redirect(`/shop?${stringURL}`);
   };
@@ -35,10 +40,12 @@ export class SideBar extends Component {
     const currentParams = UrlParams.getParams(window.location.search);
     delete currentParams[filterType];
     const stringURL = UrlParams.buildURL(currentParams);
+    this.props.setPage(1);
     this.props.redirect(`/shop?${stringURL}`);
   };
 
   resetAll = () => {
+    this.props.setPage(1);
     this.props.redirect("/shop");
   };
 
@@ -193,4 +200,8 @@ export class SideBar extends Component {
   }
 }
 
-export default SideBar;
+// export default SideBar;
+export default connect(
+  null,
+  { setPage }
+)(SideBar);
