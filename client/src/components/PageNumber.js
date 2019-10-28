@@ -7,7 +7,7 @@ export class PageNumber extends Component {
 
     return (
       <button onClick={this.props.onClick} className={`PageNumber${selected}`}>
-        {this.props.number}
+        <div className="PageNumber__number">{this.props.number}</div>
       </button>
     );
   }
