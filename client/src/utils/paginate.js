@@ -33,3 +33,5 @@ class Paginate {
     this.lastPage = this.lastPage + modifier;
   }
 }
+
+export default Paginate;
