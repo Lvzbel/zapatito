@@ -12,7 +12,7 @@ export class SizePicker extends Component {
 
     return sizes[this.props.category].map(size => {
       return (
-        <React.Fragment>
+        <React.Fragment key={size}>
           <input
             className="SizePicker__radio"
             type="radio"
