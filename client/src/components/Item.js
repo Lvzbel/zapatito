@@ -35,7 +35,7 @@ export class Item extends Component {
                 <p className="Item__category">{item.category}</p>
 
                 <form className="Item_form">
-                  <SizePicker />
+                  <SizePicker category={item.category} />
                   <QuatityInput />
                 </form>
               </div>

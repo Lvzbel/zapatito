@@ -2,6 +2,42 @@ import React, { Component } from "react";
 import "styles/components/formInputs/SizePicker.scss";
 
 export class SizePicker extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sizeOption: null
+    };
+  }
+
+  renderSizeOptions = () => {
+    const sizes = {
+      shirts: ["xl", "md", "sm", "xs"],
+      pants: ["30", "32", "34", "36", "38", "40"],
+      shoes: ["6", "7", "8", "9", "10", "11", "12"],
+      shorts: ["30", "32", "34", "36", "38", "40"]
+    };
+
+    return sizes[this.props.category].map(size => {
+      return (
+        <React.Fragment>
+          <input
+            className="SizePicker__radio"
+            type="radio"
+            name="size"
+            id={size}
+            onClick={() => this.setSize(size)}
+          />
+          <label htmlFor={size} className="SizePicker__option">
+            {size.toUpperCase()}
+          </label>
+        </React.Fragment>
+      );
+    });
+  };
+
+  setSize = value => {
+    this.setState({ sizeOption: value });
+  };
   render() {
     return (
       <div className="SizePicker">
@@ -10,44 +46,7 @@ export class SizePicker extends Component {
             Select Size
           </label>
         </div>
-        <div className="SizePicker__options">
-          <input
-            className="SizePicker__radio"
-            type="radio"
-            name="size"
-            id="xl"
-          />
-          <label htmlFor="xl" className="SizePicker__option">
-            xl
-          </label>
-          <input
-            className="SizePicker__radio"
-            type="radio"
-            name="size"
-            id="md"
-          />
-          <label htmlFor="md" className="SizePicker__option">
-            MD
-          </label>
-          <input
-            className="SizePicker__radio"
-            type="radio"
-            name="size"
-            id="ms"
-          />
-          <label htmlFor="ms" className="SizePicker__option">
-            SM
-          </label>
-          <input
-            className="SizePicker__radio"
-            type="radio"
-            name="size"
-            id="xs"
-          />
-          <label htmlFor="xs" className="SizePicker__option">
-            XS
-          </label>
-        </div>
+        <div className="SizePicker__options">{this.renderSizeOptions()}</div>
       </div>
     );
   }
