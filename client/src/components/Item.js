@@ -27,6 +27,13 @@ export class Item extends Component {
     this.setState({ quantity: value });
   };
 
+  onSubmit = () => {
+    console.log({
+      ...this.props.productsItem[this.props.productsItem.length - 1],
+      ...this.state
+    });
+  };
+
   render() {
     const item = this.props.productsItem[this.props.productsItem.length - 1];
     if (item) {
@@ -66,7 +73,12 @@ export class Item extends Component {
                     />
                   </div>
                   <div className="Item__btn">
-                    <button className="btn btn__tertiary">Add to Cart</button>
+                    <button
+                      onClick={this.onSubmit}
+                      className="btn btn__tertiary"
+                    >
+                      Add to Cart
+                    </button>
                   </div>
                 </div>
               </div>
