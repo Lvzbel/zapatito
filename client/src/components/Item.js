@@ -50,17 +50,24 @@ export class Item extends Component {
                 <hr />
                 <p className="Item__category">{item.category}</p>
 
-                <div className="Itdiv">
+                <div className="Item__inputs">
                   {item.category !== "backpack" && (
-                    <SizePicker
-                      action={this.setSizeOption}
-                      category={item.category}
-                    />
+                    <div className="Item__input">
+                      <SizePicker
+                        action={this.setSizeOption}
+                        category={item.category}
+                      />
+                    </div>
                   )}
-                  <QuatityInput
-                    action={this.setQuantity}
-                    quantity={this.state.quantity}
-                  />
+                  <div className="Item__input">
+                    <QuatityInput
+                      action={this.setQuantity}
+                      quantity={this.state.quantity}
+                    />
+                  </div>
+                  <div className="Item__btn">
+                    <button className="btn btn__tertiary">Add to Cart</button>
+                  </div>
                 </div>
               </div>
             </div>
