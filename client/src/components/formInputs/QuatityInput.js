@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "styles/components/formInputs/QuantityInput.scss";
 
 export class QuatityInput extends Component {
   increaseQuantity = () => {
@@ -16,19 +17,24 @@ export class QuatityInput extends Component {
   render() {
     return (
       <div className="QuantityInput">
-        <button
-          onClick={this.decreaseQuantity}
-          className="QuantityInput__button"
-        >
-          -
-        </button>
-        <div className="QuantityInput__display">{this.props.quantity}</div>
-        <button
-          onClick={this.increaseQuantity}
-          className="QuantityInput__button"
-        >
-          +
-        </button>
+        <p className="QuantityInput__label">Select Quantity</p>
+        <div className="QuantityInput__container">
+          <button
+            onClick={this.decreaseQuantity}
+            className="QuantityInput__button"
+          >
+            <i className="fas fa-minus"></i>
+          </button>
+          <div className="QuantityInput__display">
+            <p>{this.props.quantity}</p>
+          </div>
+          <button
+            onClick={this.increaseQuantity}
+            className="QuantityInput__button"
+          >
+            <i className="fas fa-plus"></i>
+          </button>
+        </div>
       </div>
     );
   }
