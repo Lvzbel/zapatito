@@ -23,6 +23,10 @@ export class Item extends Component {
     this.setState({ sizeOption: value });
   };
 
+  setQuantity = value => {
+    this.setState({ quantity: value });
+  };
+
   render() {
     const item = this.props.productsItem[this.props.productsItem.length - 1];
     if (item) {
@@ -46,15 +50,18 @@ export class Item extends Component {
                 <hr />
                 <p className="Item__category">{item.category}</p>
 
-                <form className="Item_form">
+                <div className="Itdiv">
                   {item.category !== "backpack" && (
                     <SizePicker
                       action={this.setSizeOption}
                       category={item.category}
                     />
                   )}
-                  <QuatityInput />
-                </form>
+                  <QuatityInput
+                    action={this.setQuantity}
+                    quantity={this.state.quantity}
+                  />
+                </div>
               </div>
             </div>
           </div>
