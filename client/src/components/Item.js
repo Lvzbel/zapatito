@@ -6,10 +6,22 @@ import SizePicker from "components/formInputs/SizePicker";
 import QuatityInput from "components/formInputs/QuatityInput";
 
 export class Item extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sizeOption: null,
+      quantity: 1
+    };
+  }
+
   componentDidMount() {
     const item = this.props.match.params.id;
     this.props.fetchItem(item);
   }
+
+  setSizeOption = value => {
+    this.setState({ sizeOption: value });
+  };
 
   render() {
     const item = this.props.productsItem[this.props.productsItem.length - 1];
@@ -36,7 +48,10 @@ export class Item extends Component {
 
                 <form className="Item_form">
                   {item.category !== "backpack" && (
-                    <SizePicker category={item.category} />
+                    <SizePicker
+                      action={this.setSizeOption}
+                      category={item.category}
+                    />
                   )}
                   <QuatityInput />
                 </form>

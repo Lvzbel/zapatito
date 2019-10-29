@@ -2,13 +2,6 @@ import React, { Component } from "react";
 import "styles/components/formInputs/SizePicker.scss";
 
 export class SizePicker extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      sizeOption: null
-    };
-  }
-
   renderSizeOptions = () => {
     const sizes = {
       shirts: ["xl", "md", "sm", "xs"],
@@ -36,7 +29,7 @@ export class SizePicker extends Component {
   };
 
   setSize = value => {
-    this.setState({ sizeOption: value });
+    this.props.action(value);
   };
   render() {
     return (
