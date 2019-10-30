@@ -9,3 +9,5 @@ export const FETCH_SALE = "FETCH_SALE";
 export const FETCH_ITEM = "FETCH_ITEM";
 export const RESET_LOAD = "RESET_LOAD";
 export const SET_PAGE = "SET_PAGE";
+export const ADD_CART = "ADD_CART";
+export const REMOVE_CART = "REMOVE_CART";
