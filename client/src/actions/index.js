@@ -9,7 +9,9 @@ import {
   FETCH_SALE,
   FETCH_ITEM,
   RESET_LOAD,
-  SET_PAGE
+  SET_PAGE,
+  ADD_CART,
+  REMOVE_CART
 } from "./types";
 import FilterProducts from "utils/filterProducts";
 const axios = require("axios");
@@ -88,4 +90,19 @@ export const fetchSale = () => async dispatch => {
 export const fetchItem = id => async dispatch => {
   const response = await axios.get(`${api}/item/${id}`);
   dispatch({ type: FETCH_ITEM, payload: response.data });
+};
+
+// CART
+export const addToCart = item => {
+  return {
+    type: ADD_CART,
+    payload: item
+  };
+};
+
+export const removeToCart = id => {
+  return {
+    type: ADD_CART,
+    payload: id
+  };
 };
