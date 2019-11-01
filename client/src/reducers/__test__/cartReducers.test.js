@@ -1,4 +1,4 @@
-import { ADD_CART, REMOVE_CART } from "actions/types";
+import { ADD_CART, REMOVE_CART, CLEAR_CART } from "actions/types";
 import cartReducers from "reducers/cartReducers";
 
 describe("Testing ADD_CART action", () => {
@@ -43,5 +43,20 @@ describe("Testing REMOVE_CART action", () => {
     const newState = cartReducers(INITIAL_STATE, action);
     expect(newState.cartItems.length).toEqual(1);
     expect(newState.cartItems[0].id).toEqual(2);
+  });
+});
+
+describe("Testing CLEAR_CART action", () => {
+  const INITIAL_STATE = {
+    cartItems: [{ id: 1 }, { id: 2 }]
+  };
+
+  it("clears all content from cartItems", () => {
+    const action = {
+      type: CLEAR_CART
+    };
+
+    const newState = cartReducers(INITIAL_STATE, action);
+    expect(newState.cartItems.length).toEqual(0);
   });
 });
