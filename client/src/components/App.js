@@ -6,6 +6,7 @@ import Shop from "./Shop";
 import Item from "./Item";
 import About from "./About";
 import Contact from "./Contact";
+import Cart from "./Cart";
 import Footer from "./Footer";
 import NotFound from "./NotFound";
 import ContactRedirect from "./ContactRedirect";
@@ -21,6 +22,7 @@ export class App extends Component {
             <Route exact path="/shop" component={Shop} />
             <Route exact path="/about" component={About} />
             <Route exact path="/contact" component={Contact} />
+            <Route exact path="/cart" component={Cart} />
             <Route
               exact
               path="/form-redirect/:customer"
