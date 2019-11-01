@@ -29,16 +29,18 @@ describe("Testing ADD_CART action", () => {
   });
 });
 
-it("remove item from cart", () => {
-  const INITIAL_STATE = {
-    cartItems: [{ id: 1 }, { id: 2 }]
-  };
-  const action = {
-    type: REMOVE_CART,
-    payload: 1
-  };
+describe("Testing REMOVE_CART action", () => {
+  it("remove item from cart", () => {
+    const INITIAL_STATE = {
+      cartItems: [{ id: 1 }, { id: 2 }]
+    };
+    const action = {
+      type: REMOVE_CART,
+      payload: 1
+    };
 
-  const newState = cartReducers(INITIAL_STATE, action);
-  expect(newState.cartItems.length).toEqual(1);
-  expect(newState.cartItems[0].id).toEqual(2);
+    const newState = cartReducers(INITIAL_STATE, action);
+    expect(newState.cartItems.length).toEqual(1);
+    expect(newState.cartItems[0].id).toEqual(2);
+  });
 });
