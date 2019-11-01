@@ -30,10 +30,11 @@ describe("Testing ADD_CART action", () => {
 });
 
 describe("Testing REMOVE_CART action", () => {
+  const INITIAL_STATE = {
+    cartItems: [{ id: 1 }, { id: 2 }]
+  };
+
   it("remove item from cart", () => {
-    const INITIAL_STATE = {
-      cartItems: [{ id: 1 }, { id: 2 }]
-    };
     const action = {
       type: REMOVE_CART,
       payload: 1
