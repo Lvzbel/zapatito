@@ -11,7 +11,8 @@ import {
   RESET_LOAD,
   SET_PAGE,
   ADD_CART,
-  REMOVE_CART
+  REMOVE_CART,
+  CLEAR_CART
 } from "./types";
 import FilterProducts from "utils/filterProducts";
 const axios = require("axios");
@@ -104,5 +105,11 @@ export const removeToCart = id => {
   return {
     type: REMOVE_CART,
     payload: id
+  };
+};
+
+export const clearCart = () => {
+  return {
+    type: CLEAR_CART
   };
 };
