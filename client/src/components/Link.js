@@ -7,11 +7,12 @@ function Link({
   to = "#",
   content = "",
   variant = "dark",
+  underline = false,
   funtional = false,
   icon = false,
   exact = false
 }) {
-  const linkClass = `Link Link--${variant}`;
+  const linkClass = `Link Link--${variant} ${underline && "Link--underline"}`;
   if (funtional) {
     return (
       <NavLink
