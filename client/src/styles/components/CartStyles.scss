@@ -1,3 +1,71 @@
+@import "../base/settings";
 .Cart {
   margin-top: 10rem;
+  font-family: inherit;
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    width: 1000px;
+  }
+
+  &__actions {
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-end;
+    align-items: flex-end;
+  }
+
+  &__btn {
+    font-size: 1.5rem;
+  }
+
+  &__table {
+    width: 100%;
+
+    & thead {
+      border-bottom: 1px solid $color-primary;
+    }
+  }
+
+  &__head {
+    font-family: inherit;
+    font-weight: 400;
+
+    &--title {
+      width: 60%;
+      text-align: start;
+    }
+
+    &--quant {
+      width: 15%;
+      text-align: center;
+    }
+
+    &--price {
+      width: 25%;
+      text-align: end;
+    }
+  }
+
+  &__product {
+    font-family: inherit;
+    font-weight: 400;
+
+    &--title {
+      width: 60%;
+      text-align: start;
+    }
+
+    &--quant {
+      width: 15%;
+      text-align: center;
+    }
+
+    &--price {
+      width: 25%;
+      text-align: end;
+    }
+  }
 }
