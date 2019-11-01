@@ -11,6 +11,10 @@
     color: $color-light;
   }
 
+  &--primary {
+    color: lighten($color-primary, 10%);
+  }
+
   &:hover,
   &:active {
     color: $color-primary;
