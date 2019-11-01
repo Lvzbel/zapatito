@@ -1,16 +1,32 @@
 import { ADD_CART, REMOVE_CART } from "actions/types";
 import cartReducers from "reducers/cartReducers";
 
-it("add a new item to an empty cart", () => {
-  const INITIAL_STATE = {
-    cartItems: []
-  };
-  const action = {
-    type: ADD_CART,
-    payload: { id: 1 }
-  };
-  const newState = cartReducers(INITIAL_STATE, action);
-  expect(newState.cartItems[0].id).toEqual(1);
+describe("Testing ADD_CART action", () => {
+  it("add a new item to an empty cart", () => {
+    const INITIAL_STATE = {
+      cartItems: []
+    };
+    const action = {
+      type: ADD_CART,
+      payload: { id: 1 }
+    };
+    const newState = cartReducers(INITIAL_STATE, action);
+    expect(newState.cartItems[0].id).toEqual(1);
+  });
+
+  it("add a new item to a cart with one item in it", () => {
+    const INITIAL_STATE = {
+      cartItems: [{ id: 1 }]
+    };
+    const action = {
+      type: ADD_CART,
+      payload: { id: 2 }
+    };
+    const newState = cartReducers(INITIAL_STATE, action);
+    expect(newState.cartItems.length).toEqual(2);
+    expect(newState.cartItems[0].id).toEqual(1);
+    expect(newState.cartItems[1].id).toEqual(2);
+  });
 });
 
 it("remove item from cart", () => {
