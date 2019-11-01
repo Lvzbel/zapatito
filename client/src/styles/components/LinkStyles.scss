@@ -29,6 +29,12 @@
   }
 
   &--underline {
-    text-decoration: underline;
+    border-bottom: solid 2px lighten($color-primary, 10%);
+    display: inline-block;
+    padding-bottom: 3px;
+
+    &:hover {
+      border-bottom: solid 2px $color-primary;
+    }
   }
 }
