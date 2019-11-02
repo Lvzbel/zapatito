@@ -9,7 +9,7 @@ export class Cart extends Component {
       <div className="Cart">
         <div className="Cart__container container">
           <h1 className="Cart__header">
-            Shopping Cart <i className="fas fa-shopping-cart"></i>
+            Shopping Cart <i className="Cart__icon fas fa-shopping-cart"></i>
           </h1>
 
           <div className="Cart__actions">
@@ -41,7 +41,7 @@ export class Cart extends Component {
                   />
                 </td>
                 <td className="Cart__product Cart__product--quant">1</td>
-                <td className="Cart__product Cart__product--price">$299</td>
+                <td className="Cart__product Cart__product--price">$299.00</td>
               </tr>
             </tbody>
           </table>

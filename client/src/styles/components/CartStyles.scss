@@ -9,12 +9,23 @@
     width: 1000px;
   }
 
+  &__header {
+    margin-top: 5rem;
+    font-size: 4rem;
+    font-weight: 400;
+  }
+
+  &__icon {
+    color: $color-primary;
+  }
+
   &__actions {
     font-size: 2rem;
     display: flex;
     justify-content: space-between;
     align-content: flex-end;
     align-items: flex-end;
+    margin: 5rem;
   }
 
   &__btn {
@@ -30,8 +41,10 @@
   }
 
   &__head {
+    font-size: 2rem;
     font-family: inherit;
     font-weight: 400;
+    padding-bottom: 1rem;
 
     &--title {
       width: 60%;
@@ -61,11 +74,13 @@
     &--quant {
       width: 15%;
       text-align: center;
+      font-size: 2rem;
     }
 
     &--price {
       width: 25%;
       text-align: end;
+      font-size: 2.3rem;
     }
   }
 }
