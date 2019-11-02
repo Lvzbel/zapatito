@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Link from "components/Link";
+import CartItem from "components/CartItem";
 import "styles/components/CartStyles.scss";
 
 export class Cart extends Component {
@@ -32,7 +33,13 @@ export class Cart extends Component {
 
             <tbody>
               <tr>
-                <td className="Cart__product Cart__product--title">Backpack</td>
+                <td className="Cart__product Cart__product--title">
+                  <CartItem
+                    image="backpack-1"
+                    name="Aphrodite"
+                    category="Backpacks"
+                  />
+                </td>
                 <td className="Cart__product Cart__product--quant">1</td>
                 <td className="Cart__product Cart__product--price">$299</td>
               </tr>
