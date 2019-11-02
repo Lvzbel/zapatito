@@ -1,0 +1,46 @@
+@import "../base/settings";
+
+.CartItem {
+  display: flex;
+  height: 15rem;
+  width: 100%;
+  padding: 0.5rem 0;
+  margin: 2rem 0;
+
+  &__image {
+    height: 100%;
+  }
+
+  &__info {
+    display: flex;
+
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__name {
+    font-size: 2.5rem;
+  }
+
+  &__category {
+    font-size: 1.5rem;
+    color: $color-secondary;
+    margin-left: 0.5rem;
+  }
+
+  &__remove {
+    margin-top: 0.75rem;
+    cursor: pointer;
+    background-color: #dc3545;
+    border-radius: 2px;
+    border: none;
+    color: white;
+    padding: 0.75rem 0.5rem;
+
+    &:hover {
+      background-color: darken(#dc3545, 5);
+    }
+  }
+}
