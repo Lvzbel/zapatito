@@ -62,6 +62,13 @@
     }
   }
 
+  &__quant-input {
+    font-size: 2.2rem;
+    padding: 0.75rem 0.75rem 0.75rem 2rem;
+    text-align: center;
+    width: 20%;
+  }
+
   &__product {
     font-family: inherit;
     font-weight: 400;
@@ -82,5 +89,19 @@
       text-align: end;
       font-size: 2.3rem;
     }
+  }
+
+  &__footer {
+    display: flex;
+    border-top: 1px solid $color-primary;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 5rem 0;
+  }
+
+  &__total {
+    font-size: 2.3rem;
+    margin-bottom: 2.5rem;
   }
 }

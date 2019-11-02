@@ -40,11 +40,22 @@ export class Cart extends Component {
                     category="Backpacks"
                   />
                 </td>
-                <td className="Cart__product Cart__product--quant">1</td>
+                <td className="Cart__product Cart__product--quant">
+                  <input
+                    type="number"
+                    name="quantity"
+                    value="1"
+                    className="Cart__quant-input"
+                  />
+                </td>
                 <td className="Cart__product Cart__product--price">$299.00</td>
               </tr>
             </tbody>
           </table>
+          <div className="Cart__footer">
+            <p className="Cart__total">Your Total is: $299.00</p>
+            <button className="Cart__btn btn btn__tertiary">Checkout</button>
+          </div>
         </div>
       </div>
     );
