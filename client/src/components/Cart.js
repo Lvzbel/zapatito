@@ -6,7 +6,6 @@ import "styles/components/CartStyles.scss";
 
 export class Cart extends Component {
   renderItemList = () => {
-    console.log("Rendering");
     return this.props.cartItems.map(item => {
       return (
         <React.Fragment key={item.id}>
@@ -34,7 +33,6 @@ export class Cart extends Component {
   };
 
   renderEmptyMessage() {
-    console.log("Empty cart");
     return (
       <tr>
         <td>
@@ -45,6 +43,7 @@ export class Cart extends Component {
   }
 
   render() {
+    const isCartEmpty = this.props.cartItems[0];
     return (
       <div className="Cart">
         <div className="Cart__container container">
@@ -71,9 +70,7 @@ export class Cart extends Component {
               </tr>
             </thead>
             <tbody>
-              {this.props.cartItems[0]
-                ? this.renderItemList()
-                : this.renderEmptyMessage()}
+              {isCartEmpty ? this.renderItemList() : this.renderEmptyMessage()}
             </tbody>
           </table>
           <div className="Cart__footer">
