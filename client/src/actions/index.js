@@ -109,10 +109,13 @@ export const removeToCart = id => {
   };
 };
 
-export const updateCartQuantity = id => {
+export const updateCartQuantity = (id, quantity) => {
   return {
     type: UPDATE_QUANT_CART,
-    payload: id
+    payload: {
+      id,
+      quantity
+    }
   };
 };
 
