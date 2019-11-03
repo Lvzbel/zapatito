@@ -1,9 +1,49 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import Link from "components/Link";
 import CartItem from "components/CartItem";
 import "styles/components/CartStyles.scss";
 
 export class Cart extends Component {
+  renderItemList = () => {
+    console.log("Rendering");
+    return this.props.cartItems.map(item => {
+      return (
+        <React.Fragment key={item.id}>
+          <tr>
+            <td className="Cart__product Cart__product--title">
+              <CartItem
+                image={item.image}
+                name={item.name}
+                category={item.category}
+              />
+            </td>
+            <td className="Cart__product Cart__product--quant">
+              <input
+                type="number"
+                name="quantity"
+                value="1"
+                className="Cart__quant-input"
+              />
+            </td>
+            <td className="Cart__product Cart__product--price">{`${item.price}0`}</td>
+          </tr>
+        </React.Fragment>
+      );
+    });
+  };
+
+  renderEmptyMessage() {
+    console.log("Empty cart");
+    return (
+      <tr>
+        <td>
+          <div className="Cart__empty">Wow! Is so lonely here.</div>
+        </td>
+      </tr>
+    );
+  }
+
   render() {
     return (
       <div className="Cart">
@@ -30,26 +70,10 @@ export class Cart extends Component {
                 <th className="Cart__head Cart__head--price">Price</th>
               </tr>
             </thead>
-
             <tbody>
-              <tr>
-                <td className="Cart__product Cart__product--title">
-                  <CartItem
-                    image="backpack-1"
-                    name="Aphrodite"
-                    category="Backpacks"
-                  />
-                </td>
-                <td className="Cart__product Cart__product--quant">
-                  <input
-                    type="number"
-                    name="quantity"
-                    value="1"
-                    className="Cart__quant-input"
-                  />
-                </td>
-                <td className="Cart__product Cart__product--price">$299.00</td>
-              </tr>
+              {this.props.cartItems[0]
+                ? this.renderItemList()
+                : this.renderEmptyMessage()}
             </tbody>
           </table>
           <div className="Cart__footer">
@@ -62,4 +86,10 @@ export class Cart extends Component {
   }
 }
 
-export default Cart;
+const mapStateToProps = state => {
+  return {
+    cartItems: state.cart.cartItems
+  };
+};
+
+export default connect(mapStateToProps)(Cart);
