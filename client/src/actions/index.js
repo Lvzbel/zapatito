@@ -12,7 +12,8 @@ import {
   SET_PAGE,
   ADD_CART,
   REMOVE_CART,
-  CLEAR_CART
+  CLEAR_CART,
+  UPDATE_QUANT_CART
 } from "./types";
 import FilterProducts from "utils/filterProducts";
 const axios = require("axios");
@@ -104,6 +105,13 @@ export const addToCart = item => {
 export const removeToCart = id => {
   return {
     type: REMOVE_CART,
+    payload: id
+  };
+};
+
+export const updateCartQuantity = id => {
+  return {
+    type: UPDATE_QUANT_CART,
     payload: id
   };
 };
