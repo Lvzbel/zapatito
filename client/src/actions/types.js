@@ -12,3 +12,4 @@ export const SET_PAGE = "SET_PAGE";
 export const ADD_CART = "ADD_CART";
 export const REMOVE_CART = "REMOVE_CART";
 export const CLEAR_CART = "CLEAR_CART";
+export const UPDATE_QUANT_CART = "UPDATE_QUANT_CART";
