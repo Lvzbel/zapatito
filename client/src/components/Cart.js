@@ -42,6 +42,17 @@ export class Cart extends Component {
     );
   }
 
+  calculateTotal = () => {
+    const itemsArray = this.props.cartItems;
+    let counter = 0;
+
+    if (itemsArray) {
+      itemsArray.forEach(item => (counter += parseInt(item.price)));
+    }
+
+    return counter;
+  };
+
   render() {
     const isCartEmpty = this.props.cartItems[0];
     return (
@@ -74,7 +85,7 @@ export class Cart extends Component {
             </tbody>
           </table>
           <div className="Cart__footer">
-            <p className="Cart__total">Your Total is: $299.00</p>
+            <p className="Cart__total">{`Your Total is: $${this.calculateTotal()}.00`}</p>
             <button className="Cart__btn btn btn__tertiary">Checkout</button>
           </div>
         </div>
