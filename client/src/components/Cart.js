@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { removeToCart } from "actions/index";
+import { removeFromCart } from "actions/index";
 import Link from "components/Link";
 import CartItem from "components/CartItem";
 import "styles/components/CartStyles.scss";
@@ -17,7 +17,7 @@ export class Cart extends Component {
                 name={item.name}
                 size={item.sizeOption}
                 category={item.category}
-                remove={() => this.props.removeToCart(item.id)}
+                remove={() => this.props.removeFromCart(item.id)}
               />
             </td>
             <td className="Cart__product Cart__product--quant">
@@ -105,5 +105,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { removeToCart }
+  { removeFromCart }
 )(Cart);

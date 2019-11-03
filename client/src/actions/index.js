@@ -102,7 +102,7 @@ export const addToCart = item => {
   };
 };
 
-export const removeToCart = id => {
+export const removeFromCart = id => {
   return {
     type: REMOVE_CART,
     payload: id
