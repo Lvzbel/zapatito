@@ -34,7 +34,7 @@ export default (state = INITIAL_STATE, action) => {
           if (item.id === action.payload.id) {
             return {
               ...item,
-              quantity: action.payload.quantity
+              quantity: parseInt(action.payload.quantity)
             };
           } else {
             return item;
