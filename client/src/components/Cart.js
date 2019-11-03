@@ -57,7 +57,9 @@ export class Cart extends Component {
     let counter = 0;
 
     if (itemsArray) {
-      itemsArray.forEach(item => (counter += parseInt(item.price) * parseInt(item.quantity)));
+      itemsArray.forEach(
+        item => (counter += parseInt(item.price) * parseInt(item.quantity))
+      );
     }
 
     return counter;
