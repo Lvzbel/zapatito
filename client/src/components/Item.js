@@ -41,7 +41,7 @@ export class Item extends Component {
         quantity
       });
     } else {
-      console.log("Please pick a size");
+      this.setState({ error: true });
     }
   };
 
@@ -90,6 +90,9 @@ export class Item extends Component {
                     >
                       Add to Cart
                     </button>
+                  </div>
+                  <div className="Item__error">
+                    {this.state.error && "Please select a size"}
                   </div>
                 </div>
               </div>
