@@ -10,11 +10,13 @@ import "styles/components/CartItemStyles.scss";
 function CartItem({ image, name, category, remove }) {
   return (
     <div className="CartItem">
-      <img
-        className="CartItem__image"
-        src={`/images/${image}.jpg`}
-        alt={name}
-      />
+      <div className="CartItem__img-container">
+        <img
+          className="CartItem__image"
+          src={`/images/${image}.jpg`}
+          alt={name}
+        />
+      </div>
       <div className="CartItem__info">
         <p className="CartItem__name">{name}</p>
         <p className="CartItem__category">{category}</p>
