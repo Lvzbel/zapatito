@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { removeFromCart } from "actions/index";
+import { removeFromCart, updateCartQuantity } from "actions/index";
 import Link from "components/Link";
 import CartItem from "components/CartItem";
 import "styles/components/CartStyles.scss";
@@ -24,8 +24,11 @@ export class Cart extends Component {
               <input
                 type="number"
                 name="quantity"
-                value="1"
+                value={item.quantity}
+                min="1"
+                max="5"
                 className="Cart__quant-input"
+                onChange={e => this.quantityChange(e, item.id)}
               />
             </td>
             <td className="Cart__product Cart__product--price">{`${item.price}0`}</td>
@@ -34,6 +37,10 @@ export class Cart extends Component {
       );
     });
   };
+
+  quantityChange(e, id) {
+    this.props.updateCartQuantity(id, e.target.value);
+  }
 
   renderEmptyMessage() {
     return (
@@ -105,5 +112,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { removeFromCart }
+  { removeFromCart, updateCartQuantity }
 )(Cart);
