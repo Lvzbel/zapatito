@@ -14,6 +14,7 @@ export class Cart extends Component {
               <CartItem
                 image={item.image}
                 name={item.name}
+                size={item.sizeOption}
                 category={item.category}
               />
             </td>
