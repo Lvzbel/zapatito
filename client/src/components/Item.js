@@ -28,10 +28,16 @@ export class Item extends Component {
   };
 
   onSubmit = () => {
-    console.log({
-      ...this.props.productsItem[this.props.productsItem.length - 1],
-      ...this.state
-    });
+    const item = this.props.productsItem[this.props.productsItem.length - 1];
+    // Item must have size selected unless is a backpack
+    if (this.state.sizeOption || item.category === "backpack") {
+      console.log({
+        ...item,
+        ...this.state
+      });
+    } else {
+      console.log("Please pick a size");
+    }
   };
 
   render() {
