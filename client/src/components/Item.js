@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchItem } from "../actions/index";
+import { fetchItem, addToCart } from "../actions/index";
 import "styles/components/ItemStyles.scss";
 import SizePicker from "components/formInputs/SizePicker";
 import QuatityInput from "components/formInputs/QuatityInput";
@@ -35,11 +35,12 @@ export class Item extends Component {
     const { sizeOption, quantity } = this.state;
     // Item must have size selected unless is a backpack
     if (this.state.sizeOption || currentItem.category === "backpack") {
-      console.log({
+      this.props.addToCart({
         ...currentItem,
         sizeOption,
         quantity
       });
+      this.props.history.push("/cart");
     } else {
       this.setState({ error: true });
     }
@@ -115,5 +116,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { fetchItem }
+  { fetchItem, addToCart }
 )(Item);
