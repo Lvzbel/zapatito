@@ -8,11 +8,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 
   &__container {
+    position: relative;
     background-color: white;
     width: 50%;
     height: 50%;
     border-radius: 5px;
+  }
+
+  &__close {
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: transparent;
+    color: red;
+    border: none;
+  }
+
+  &__icon {
+    font-size: 3rem;
   }
 }
