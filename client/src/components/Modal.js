@@ -4,8 +4,10 @@ import "styles/components/ModalStyles.scss";
 
 function Modal(props) {
   return ReactDOM.createPortal(
-    <div className="Modal">
-      <div className="Modal__container">Container</div>
+    <div onClick={props.onDismiss} className="Modal">
+      <div onClick={e => e.stopPropagation()} className="Modal__container">
+        Container
+      </div>
     </div>,
     document.querySelector("#modal")
   );
