@@ -6,7 +6,11 @@ function Modal(props) {
   return ReactDOM.createPortal(
     <div onClick={props.onDismiss} className="Modal">
       <div onClick={e => e.stopPropagation()} className="Modal__container">
-        <button onClick={props.onDismiss} className="Modal__close">
+        <button
+          aria-label="Close"
+          onClick={props.onDismiss}
+          className="Modal__close"
+        >
           <i class="Modal__icon fas fa-window-close"></i>
         </button>
       </div>
