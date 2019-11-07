@@ -2,10 +2,18 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { removeFromCart, updateCartQuantity } from "actions/index";
 import Link from "components/Link";
+import Modal from "components/Modal";
 import CartItem from "components/CartItem";
 import "styles/components/CartStyles.scss";
 
 export class Cart extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      checkout: false
+    };
+  }
+
   renderItemList = () => {
     return this.props.cartItems.map(item => {
       return (
@@ -65,6 +73,24 @@ export class Cart extends Component {
     return counter;
   };
 
+  // MODAL
+
+  renderCheckout = () => {
+    return <Modal onDismiss={this.closeCheckout} />;
+  };
+
+  openCheckout = () => {
+    this.setState({
+      checkout: true
+    });
+  };
+
+  closeCheckout = () => {
+    this.setState({
+      checkout: false
+    });
+  };
+
   render() {
     const isCartEmpty = this.props.cartItems[0];
     return (
@@ -81,7 +107,12 @@ export class Cart extends Component {
               variant="primary"
               underline={true}
             />
-            <button className="Cart__btn btn btn__tertiary">Checkout</button>
+            <button
+              onClick={this.openCheckout}
+              className="Cart__btn btn btn__tertiary"
+            >
+              Checkout
+            </button>
           </div>
 
           <table className="Cart__table">
@@ -98,9 +129,15 @@ export class Cart extends Component {
           </table>
           <div className="Cart__footer">
             <p className="Cart__total">{`Your Total is: $${this.calculateTotal()}.00`}</p>
-            <button className="Cart__btn btn btn__tertiary">Checkout</button>
+            <button
+              onClick={this.openCheckout}
+              className="Cart__btn btn btn__tertiary"
+            >
+              Checkout
+            </button>
           </div>
         </div>
+        {this.state.checkout && this.renderCheckout()}
       </div>
     );
   }
