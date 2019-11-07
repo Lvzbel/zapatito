@@ -21,11 +21,17 @@
   &__close {
     cursor: pointer;
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 1.25rem;
+    right: 1.25rem;
     background-color: transparent;
     color: red;
     border: none;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: darken(red, 5%);
+      transform: scale(1.05);
+    }
   }
 
   &__icon {
