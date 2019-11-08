@@ -13,6 +13,10 @@
   transition: all 0.2s ease-in;
   border: none;
 
+  &:disabled {
+    background-color: $color-secondary;
+  }
+
   &__primary {
     background-color: $color-dark;
     color: $color-light;
