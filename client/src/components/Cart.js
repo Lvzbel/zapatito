@@ -76,7 +76,11 @@ export class Cart extends Component {
   // MODAL
 
   renderCheckout = () => {
-    return <Modal onDismiss={this.closeCheckout} />;
+    return (
+      <Modal onDismiss={this.closeCheckout}>
+        Checkout proccess will go here.
+      </Modal>
+    );
   };
 
   openCheckout = () => {

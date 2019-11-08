@@ -15,6 +15,7 @@ function Modal(props) {
             <i class="Modal__icon fas fa-window-close"></i>
           </button>
         </div>
+        {props.children}
       </div>
     </div>,
     document.querySelector("#modal")
