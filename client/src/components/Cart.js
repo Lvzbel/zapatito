@@ -108,6 +108,7 @@ export class Cart extends Component {
               underline={true}
             />
             <button
+              disabled={!isCartEmpty}
               onClick={this.openCheckout}
               className="Cart__btn btn btn__tertiary"
             >
@@ -130,6 +131,7 @@ export class Cart extends Component {
           <div className="Cart__footer">
             <p className="Cart__total">{`Your Total is: $${this.calculateTotal()}.00`}</p>
             <button
+              disabled={!isCartEmpty}
               onClick={this.openCheckout}
               className="Cart__btn btn btn__tertiary"
             >
