@@ -11,7 +11,6 @@ function LoginNav(props) {
     <div className="LoginNav__quantity">{cartQuatity}</div>
   );
 
-  console.log(props.cartItems);
   return (
     <div className="LoginNav">
       <div className="LoginNav__container container">
