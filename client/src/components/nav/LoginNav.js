@@ -1,9 +1,17 @@
 import React from "react";
+import { connect } from "react-redux";
 import Link from "../Link";
 import "../../styles/components/nav/LoginNavStyles.scss";
 import GoogleAuth from "../GoogleAuth";
 
-function LoginNav() {
+function LoginNav(props) {
+  const cartQuatity = props.cartItems.length;
+
+  const quantityComponent = (
+    <div className="LoginNav__quantity">{cartQuatity}</div>
+  );
+
+  console.log(props.cartItems);
   return (
     <div className="LoginNav">
       <div className="LoginNav__container container">
@@ -12,7 +20,8 @@ function LoginNav() {
           <li>
             <GoogleAuth />
           </li>
-          <li>
+          <li className="LoginNav__cart-link">
+            {cartQuatity ? quantityComponent : null}
             <Link
               to="/cart"
               content="Cart"
@@ -27,4 +36,10 @@ function LoginNav() {
   );
 }
 
-export default LoginNav;
+const mapStateToProps = state => {
+  return {
+    cartItems: state.cart.cartItems
+  };
+};
+
+export default connect(mapStateToProps, null)(LoginNav);
