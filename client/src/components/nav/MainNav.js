@@ -13,12 +13,11 @@ export class MainNav extends Component {
               <p>Zapatito</p>
             </LinkRouter>
 
-            <div className="MainNav__burger">
+            <button className="MainNav__burger">
               <span></span>
               <span></span>
               <span></span>
-              <input type="checkbox" />
-            </div>
+            </button>
           </div>
 
           <ul className="MainNav__links">
