@@ -43,11 +43,31 @@
 
   &__links {
     display: flex;
+
+    @include respond(sm) {
+      background-color: rgba($color-light, 0.8);
+      width: 150%;
+      flex-direction: column;
+      margin: 1rem 0;
+    }
   }
 
   &__link {
     font-size: 1.8rem;
     margin-left: 3rem;
+
+    @include respond(sm) {
+      height: 100%;
+      width: 100%;
+    }
+
+    & a {
+      @include respond(sm) {
+        display: block;
+        text-align: center;
+        padding: 1rem 3rem;
+      }
+    }
   }
 
   &__burger {
