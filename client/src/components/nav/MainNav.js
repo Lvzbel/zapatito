@@ -4,6 +4,16 @@ import Link from "../Link";
 import "../../styles/components/nav/MainNavStyles.scss";
 
 export class MainNav extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { navigationActive: false };
+  }
+
+  toggleNavigation = () => {
+    const newState = !this.state.navigationActive;
+    this.setState({ navigationActive: newState });
+  };
+
   render() {
     return (
       <nav className="MainNav">
@@ -13,14 +23,17 @@ export class MainNav extends Component {
               <p>Zapatito</p>
             </LinkRouter>
 
-            <button className="MainNav__burger">
+            <button className="MainNav__burger" onClick={this.toggleNavigation}>
               <span></span>
               <span></span>
               <span></span>
             </button>
           </div>
 
-          <ul className="MainNav__links">
+          <ul
+            className={`MainNav__links ${this.state.navigationActive &&
+              "MainNav__active"}`}
+          >
             <li className="MainNav__link">
               <Link to="/" exact={true} content="home" funtional={true} />
             </li>
