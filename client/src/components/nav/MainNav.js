@@ -11,6 +11,14 @@ export class MainNav extends Component {
           <LinkRouter className="MainNav__logo" to="/">
             <p>Zapatito</p>
           </LinkRouter>
+
+          <div className="MainNav__burger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <input type="checkbox" />
+          </div>
+
           <ul className="MainNav__links">
             <li className="MainNav__link">
               <Link to="/" exact={true} content="home" funtional={true} />
