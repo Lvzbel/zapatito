@@ -16,8 +16,21 @@
       padding: 0 5rem;
     }
 
+    @include respond(sm) {
+      flex-direction: column;
+    }
+
     @include respond(xs) {
       padding: 0 2rem;
+    }
+
+    &--sub {
+      @include respond(sm) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
     }
   }
 
@@ -41,11 +54,14 @@
     position: relative;
     width: 40px;
     height: 35px;
-    display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     display: none;
+
+    @include respond(sm) {
+      display: flex;
+    }
   }
 
   &__burger input {

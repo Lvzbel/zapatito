@@ -8,15 +8,17 @@ export class MainNav extends Component {
     return (
       <nav className="MainNav">
         <div className="MainNav__container container">
-          <LinkRouter className="MainNav__logo" to="/">
-            <p>Zapatito</p>
-          </LinkRouter>
+          <div className="MainNav__container--sub">
+            <LinkRouter className="MainNav__logo" to="/">
+              <p>Zapatito</p>
+            </LinkRouter>
 
-          <div className="MainNav__burger">
-            <span></span>
-            <span></span>
-            <span></span>
-            <input type="checkbox" />
+            <div className="MainNav__burger">
+              <span></span>
+              <span></span>
+              <span></span>
+              <input type="checkbox" />
+            </div>
           </div>
 
           <ul className="MainNav__links">
