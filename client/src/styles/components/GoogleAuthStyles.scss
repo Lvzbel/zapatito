@@ -8,6 +8,7 @@
     border: none;
     text-transform: uppercase;
     color: $color-light;
+    font-size: inherit;
 
     &:hover {
       color: $color-primary;
