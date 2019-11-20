@@ -23,7 +23,7 @@ function LoginNav(props) {
             {cartQuatity ? quantityComponent : null}
             <Link
               to="/cart"
-              content="Cart"
+              content="CART"
               variant="light"
               funtional={false}
               icon="fas fa-shopping-cart"
