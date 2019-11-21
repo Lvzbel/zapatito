@@ -1,4 +1,10 @@
+@import "../abstracts/mixins";
+
 .container {
   max-width: 1280px;
   margin: 0 auto;
+
+  @include respond(lg) {
+    margin: 0 2rem;
+  }
 }

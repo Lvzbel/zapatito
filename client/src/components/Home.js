@@ -68,7 +68,4 @@ const mapStateToProps = state => {
   return { productsSale: state.products.productsSale };
 };
 
-export default connect(
-  mapStateToProps,
-  { fetchSale }
-)(Home);
+export default connect(mapStateToProps, { fetchSale })(Home);
