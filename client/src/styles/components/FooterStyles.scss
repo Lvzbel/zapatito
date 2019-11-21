@@ -1,4 +1,5 @@
 @import "../base/settings";
+@import "../abstracts/mixins";
 
 .Footer {
   background-color: $color-dark;
@@ -9,6 +10,10 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: 6rem 0 6rem 0;
+
+    @include respond(lg) {
+      padding: 6rem 2rem;
+    }
   }
 
   &__header {
