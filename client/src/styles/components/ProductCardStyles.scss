@@ -1,10 +1,15 @@
 @import "../base/settings";
+@import "../abstracts/mixins";
 
 .ProductCard {
   display: block;
   min-height: 25rem;
   min-width: 25rem;
   margin: 1rem;
+
+  @include respond(md) {
+    padding: 0 1rem;
+  }
 
   &__figure {
     height: 100%;
