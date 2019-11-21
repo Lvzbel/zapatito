@@ -1,3 +1,5 @@
+@import "../abstracts/mixins";
+
 .PromoImg {
   height: 100%;
   width: 100%;
@@ -24,6 +26,10 @@
     color: white;
     padding-bottom: 0.75vw;
     z-index: 20;
+
+    @include respond(sm) {
+      font-size: 3.75vw;
+    }
   }
 
   &__btn {
@@ -31,6 +37,11 @@
     opacity: 0;
     transition: all 0.2s ease-in;
     z-index: 20;
+    margin-top: 2rem;
+
+    @include respond(md) {
+      opacity: 1;
+    }
   }
 
   &__transparency {
@@ -43,5 +54,9 @@
     z-index: 10;
     opacity: 0;
     transition: all 0.2s ease-in;
+
+    @include respond(md) {
+      opacity: 1;
+    }
   }
 }
