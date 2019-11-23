@@ -1,4 +1,5 @@
 @import "../base/settings";
+@import "../abstracts/mixins";
 
 .Contact {
   margin-top: 10rem;
@@ -10,10 +11,18 @@
   justify-content: center;
   align-items: center;
 
+  @include respond(md) {
+    height: auto;
+  }
+
   &__box {
     background-color: rgba($color-light, 0.95);
     padding: 7rem;
     border-radius: 1px;
+
+    @include respond(md) {
+      padding: 3rem;
+    }
   }
 
   &__header {
@@ -24,6 +33,10 @@
   &__content {
     display: flex;
     letter-spacing: 1px;
+
+    @include respond(md) {
+      flex-direction: column;
+    }
   }
 
   // Input class comes from react-final-form
@@ -49,6 +62,17 @@
     &:focus {
       border: 2px solid $color-primary;
     }
+
+    @include respond(md) {
+      width: 95%;
+    }
+  }
+
+  &__form button {
+    @include respond(md) {
+      display: block;
+      margin-left: auto;
+    }
   }
 
   &__form span {
@@ -60,6 +84,12 @@
     margin-left: 6rem;
     display: flex;
     flex-direction: column;
+
+    @include respond(md) {
+      order: -1;
+      margin-left: 0;
+      margin-bottom: 5rem;
+    }
   }
 
   &__message {
