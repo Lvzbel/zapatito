@@ -1,12 +1,29 @@
 @import "../../base/settings";
+@import "../../abstracts/mixins";
 
 .SideBar {
   width: 100%;
+
+  background-color: pink;
+
+  @include respond(lg) {
+    display: flex;
+    flex-direction: column;
+  }
 
   &__title {
     font-size: 2rem;
     margin-bottom: 6.5rem;
     letter-spacing: 2px;
+  }
+
+  &__options {
+    @include respond(lg) {
+      width: 100%;
+      display: flex;
+      flex-flow: wrap;
+      justify-content: space-around;
+    }
   }
 
   &__block {
@@ -45,5 +62,11 @@
     border: none;
     color: black;
     text-decoration: none;
+  }
+
+  &__reset {
+    @include respond(lg) {
+      width: 100%;
+    }
   }
 }

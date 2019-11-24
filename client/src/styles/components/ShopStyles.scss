@@ -27,9 +27,10 @@
     padding-top: 5rem;
     position: relative;
 
-    // @include respond(lg) {
-    //   display: none;
-    // }
+    @include respond(lg) {
+      // display: none;
+      width: 100%;
+    }
   }
 
   &__items {

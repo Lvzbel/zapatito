@@ -54,146 +54,151 @@ export class SideBar extends Component {
       <div className="SideBar">
         <h4 className="SideBar__title">FILTER RESULTS</h4>
 
-        <div className="SideBar__block">
-          <h5 className="SideBar__block--heading">SHOP BY PRICE</h5>
-          <ul className="SideBar__nav-list">
-            <li className="SideBar__nav-item">
-              <button
-                className="SideBar__link"
-                onClick={e => this.setPriceRange(e, 0, 50)}
-              >
-                <i className="fas fa-angle-right"></i>
-                $0.00 - $50.00
-              </button>
-            </li>
-            <li className="SideBar__nav-item">
-              <button
-                className="SideBar__link"
-                onClick={e => this.setPriceRange(e, 51, 100)}
-              >
-                <i className="fas fa-angle-right"></i>
-                $51.00 - $100.00
-              </button>
-            </li>
-            <li className="SideBar__nav-item">
-              <button
-                className="SideBar__link"
-                onClick={e => this.setPriceRange(e, 101, 150)}
-              >
-                <i className="fas fa-angle-right"></i>
-                $101.00 - $150.00
-              </button>
-            </li>
-            <li className="SideBar__nav-item">
-              <i className="fas fa-minus"></i>
-              <button className="SideBar__link" onClick={this.resetPriceRange}>
-                Reset Price Range
-              </button>
-            </li>
-          </ul>
-        </div>
+        <div className="SideBar__options">
+          <div className="SideBar__block">
+            <h5 className="SideBar__block--heading">SHOP BY PRICE</h5>
+            <ul className="SideBar__nav-list">
+              <li className="SideBar__nav-item">
+                <button
+                  className="SideBar__link"
+                  onClick={e => this.setPriceRange(e, 0, 50)}
+                >
+                  <i className="fas fa-angle-right"></i>
+                  $0.00 - $50.00
+                </button>
+              </li>
+              <li className="SideBar__nav-item">
+                <button
+                  className="SideBar__link"
+                  onClick={e => this.setPriceRange(e, 51, 100)}
+                >
+                  <i className="fas fa-angle-right"></i>
+                  $51.00 - $100.00
+                </button>
+              </li>
+              <li className="SideBar__nav-item">
+                <button
+                  className="SideBar__link"
+                  onClick={e => this.setPriceRange(e, 101, 150)}
+                >
+                  <i className="fas fa-angle-right"></i>
+                  $101.00 - $150.00
+                </button>
+              </li>
+              <li className="SideBar__nav-item">
+                <i className="fas fa-minus"></i>
+                <button
+                  className="SideBar__link"
+                  onClick={this.resetPriceRange}
+                >
+                  Reset Price Range
+                </button>
+              </li>
+            </ul>
+          </div>
 
-        <div className="SideBar__block">
-          <h5 className="SideBar__block--heading">SHOP BY CATEGORY</h5>
-          <ul className="SideBar__nav-list">
-            <li className="SideBar__nav-item">
-              <button
-                className="SideBar__link"
-                onClick={e => this.setFilter(e, "category", "shoes")}
-              >
-                <i className="fas fa-angle-right"></i>
-                SHOES
-              </button>
-            </li>
-            <li className="SideBar__nav-item">
-              <button
-                className="SideBar__link"
-                onClick={e => this.setFilter(e, "category", "backpack")}
-              >
-                <i className="fas fa-angle-right"></i>
-                BACKPACKS
-              </button>
-            </li>
-            <li className="SideBar__nav-item">
-              <button
-                className="SideBar__link"
-                onClick={e => this.setFilter(e, "category", "shirts")}
-              >
-                <i className="fas fa-angle-right"></i>
-                SHIRTS
-              </button>
-            </li>
-            <li className="SideBar__nav-item">
-              <button
-                className="SideBar__link"
-                onClick={e => this.setFilter(e, "category", "pants")}
-              >
-                <i className="fas fa-angle-right"></i>
-                PANTS
-              </button>
-            </li>
-            <li className="SideBar__nav-item">
-              <button
-                className="SideBar__link"
-                onClick={e => this.setFilter(e, "category", "shorts")}
-              >
-                <i className="fas fa-angle-right"></i>
-                SHORTS
-              </button>
-            </li>
-            <li className="SideBar__nav-item">
-              <i className="fas fa-minus"></i>
-              <button
-                className="SideBar__link"
-                onClick={e => this.resetFilter(e, "category")}
-              >
-                Reset Category
-              </button>
-            </li>
-          </ul>
-        </div>
+          <div className="SideBar__block">
+            <h5 className="SideBar__block--heading">SHOP BY CATEGORY</h5>
+            <ul className="SideBar__nav-list">
+              <li className="SideBar__nav-item">
+                <button
+                  className="SideBar__link"
+                  onClick={e => this.setFilter(e, "category", "shoes")}
+                >
+                  <i className="fas fa-angle-right"></i>
+                  SHOES
+                </button>
+              </li>
+              <li className="SideBar__nav-item">
+                <button
+                  className="SideBar__link"
+                  onClick={e => this.setFilter(e, "category", "backpack")}
+                >
+                  <i className="fas fa-angle-right"></i>
+                  BACKPACKS
+                </button>
+              </li>
+              <li className="SideBar__nav-item">
+                <button
+                  className="SideBar__link"
+                  onClick={e => this.setFilter(e, "category", "shirts")}
+                >
+                  <i className="fas fa-angle-right"></i>
+                  SHIRTS
+                </button>
+              </li>
+              <li className="SideBar__nav-item">
+                <button
+                  className="SideBar__link"
+                  onClick={e => this.setFilter(e, "category", "pants")}
+                >
+                  <i className="fas fa-angle-right"></i>
+                  PANTS
+                </button>
+              </li>
+              <li className="SideBar__nav-item">
+                <button
+                  className="SideBar__link"
+                  onClick={e => this.setFilter(e, "category", "shorts")}
+                >
+                  <i className="fas fa-angle-right"></i>
+                  SHORTS
+                </button>
+              </li>
+              <li className="SideBar__nav-item">
+                <i className="fas fa-minus"></i>
+                <button
+                  className="SideBar__link"
+                  onClick={e => this.resetFilter(e, "category")}
+                >
+                  Reset Category
+                </button>
+              </li>
+            </ul>
+          </div>
 
-        <div className="SideBar__block">
-          <h5 className="SideBar__block--heading">SORT BY PRICE</h5>
-          <ul className="SideBar__nav-list">
-            <li className="SideBar__nav-item">
-              <button
-                className="SideBar__link"
-                onClick={e => this.setFilter(e, "order", "desc")}
-              >
-                <i className="fas fa-angle-right"></i>
-                Lower Price First
-              </button>
-            </li>
-            <li className="SideBar__nav-item">
-              <button
-                className="SideBar__link"
-                onClick={e => this.setFilter(e, "order", "inc")}
-              >
-                <i className="fas fa-angle-right"></i>
-                Highest Price First
-              </button>
-            </li>
-            <li className="SideBar__nav-item">
-              <i className="fas fa-minus"></i>
-              <button
-                className="SideBar__link"
-                onClick={e => this.resetFilter(e, "order")}
-              >
-                Reset Price Filter
-              </button>
-            </li>
-          </ul>
-        </div>
-        <div className="SideBar__block">
-          <ul className="SideBar__nav-list">
-            <li className="SideBar__nav-item">
-              <i className="fas fa-trash-alt"></i>
-              <button className="SideBar__link" onClick={this.resetAll}>
-                Reset All
-              </button>
-            </li>
-          </ul>
+          <div className="SideBar__block">
+            <h5 className="SideBar__block--heading">SORT BY PRICE</h5>
+            <ul className="SideBar__nav-list">
+              <li className="SideBar__nav-item">
+                <button
+                  className="SideBar__link"
+                  onClick={e => this.setFilter(e, "order", "desc")}
+                >
+                  <i className="fas fa-angle-right"></i>
+                  Lower Price First
+                </button>
+              </li>
+              <li className="SideBar__nav-item">
+                <button
+                  className="SideBar__link"
+                  onClick={e => this.setFilter(e, "order", "inc")}
+                >
+                  <i className="fas fa-angle-right"></i>
+                  Highest Price First
+                </button>
+              </li>
+              <li className="SideBar__nav-item">
+                <i className="fas fa-minus"></i>
+                <button
+                  className="SideBar__link"
+                  onClick={e => this.resetFilter(e, "order")}
+                >
+                  Reset Price Filter
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div className="SideBar__block SideBar__reset">
+            <ul className="SideBar__nav-list">
+              <li className="SideBar__nav-item">
+                <i className="fas fa-trash-alt"></i>
+                <button className="SideBar__link" onClick={this.resetAll}>
+                  Reset All
+                </button>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     );
@@ -201,7 +206,4 @@ export class SideBar extends Component {
 }
 
 // export default SideBar;
-export default connect(
-  null,
-  { setPage }
-)(SideBar);
+export default connect(null, { setPage })(SideBar);
