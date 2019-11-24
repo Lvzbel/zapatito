@@ -3,8 +3,10 @@ class Paginate {
     this.currentPage = currentPage;
     this.pagesArray = pagesArray;
     this.pageIndex = this.currentPage - 1;
-    this.firstPage = this.pageIndex - 5;
-    this.lastPage = this.pageIndex + 4;
+    this.firstPage = this.pageIndex - 3;
+    this.lastPage = this.pageIndex + 2;
+    // this.firstPage = this.pageIndex - 3;
+    // this.lastPage = this.pageIndex + 2;
     this.paginatedPages = [];
   }
 
