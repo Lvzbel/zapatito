@@ -5,6 +5,19 @@ import UrlParams from "utils/urlParams";
 import "styles/components/nav/SideBarStyles.scss";
 
 export class SideBar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      expand: false
+    };
+  }
+
+  toggleExpand = () => {
+    this.setState({
+      expand: !this.state.expand
+    });
+  };
+
   setPriceRange = (e, min, max) => {
     const priceObject = { price_min: min, price_max: max };
     const currentParams = UrlParams.setParam(
@@ -54,12 +67,15 @@ export class SideBar extends Component {
       <div className="SideBar">
         <div className="SideBar__header">
           <h4 className="SideBar__title">FILTER RESULTS</h4>
-          <button className="SideBar__expand">
+          <button onClick={this.toggleExpand} className="SideBar__expand">
             <i className="SideBar__icon fas fa-chevron-down"></i>
           </button>
         </div>
 
-        <div className="SideBar__options">
+        <div
+          className={`SideBar__options ${this.state.expand &&
+            "SideBar__visible"}`}
+        >
           <div className="SideBar__block">
             <h5 className="SideBar__block--heading">SHOP BY PRICE</h5>
             <ul className="SideBar__nav-list">
