@@ -4,17 +4,36 @@
 .SideBar {
   width: 100%;
 
-  background-color: pink;
-
   @include respond(lg) {
     display: flex;
     flex-direction: column;
   }
 
+  &__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+    @include respond(lg) {
+      padding: 0 2rem;
+    }
+  }
   &__title {
     font-size: 2rem;
     margin-bottom: 6.5rem;
     letter-spacing: 2px;
+
+    @include respond(lg) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__expand {
+    background-color: transparent;
+    border: none;
+    font-size: 2.5rem;
+    padding: 2rem;
+    color: $color-primary;
   }
 
   &__options {
@@ -28,6 +47,10 @@
 
   &__block {
     margin-bottom: 5rem;
+
+    @include respond(lg) {
+      margin-bottom: 2rem;
+    }
 
     &--heading {
       font-size: 1.7rem;
@@ -62,11 +85,20 @@
     border: none;
     color: black;
     text-decoration: none;
+
+    @include respond(lg) {
+      padding-bottom: 2rem;
+      font-size: 1.7rem;
+    }
   }
 
   &__reset {
     @include respond(lg) {
       width: 100%;
+    }
+
+    @include respond(nano) {
+      width: 40%;
     }
   }
 }

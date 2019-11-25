@@ -52,7 +52,12 @@ export class SideBar extends Component {
   render() {
     return (
       <div className="SideBar">
-        <h4 className="SideBar__title">FILTER RESULTS</h4>
+        <div className="SideBar__header">
+          <h4 className="SideBar__title">FILTER RESULTS</h4>
+          <button className="SideBar__expand">
+            <i className="SideBar__icon fas fa-chevron-down"></i>
+          </button>
+        </div>
 
         <div className="SideBar__options">
           <div className="SideBar__block">
