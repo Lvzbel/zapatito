@@ -9,6 +9,11 @@
     background-image: url("../../img/shop-banner.jpg");
     background-size: cover;
     background-position: bottom;
+
+    @include respond(sm) {
+      background-position: unset;
+      height: 30rem;
+    }
   }
 
   &__content {
