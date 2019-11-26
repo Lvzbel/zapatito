@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import aboutTeam from "img/about-team.jpg";
-import about1 from "img/about-1.jpg";
-import about2 from "img/about-2.jpg";
-import about3 from "img/about-3.jpg";
+import aboutTeam from "img/about-team-res.jpg";
+import about1 from "img/about-1-res.jpg";
+import about2 from "img/about-2-res.jpg";
+import about3 from "img/about-3-res.jpg";
 import "../styles/layout/AboutStyles.scss";
 // Testing
 import AOS from "aos";

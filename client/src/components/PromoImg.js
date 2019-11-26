@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import image from "../img/traveler-bagpack.jpg";
+import image from "../img/traveler-bagpack-res.jpg";
 import "../styles/components/PromoImgStyles.scss";
 
 function PromoImg() {
