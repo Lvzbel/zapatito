@@ -16,7 +16,8 @@ export class GoogleAuth extends Component {
         })
         .then(() => {
           this.auth = window.gapi.auth2.getAuthInstance();
-          this.onAuthChange({ isSignedIn: this.auth.isSignedIn.get() });
+          this.state.isSignedIn &&
+            this.onAuthChange({ isSignedIn: this.auth.isSignedIn.get() });
           this.auth.isSignedIn.listen(this.onAuthChange);
         });
     });
@@ -68,7 +69,4 @@ const mapStateToProps = state => {
   return { isSignedIn: state.auth.isSignedIn, name: state.auth.name };
 };
 
-export default connect(
-  mapStateToProps,
-  { signIn, signOut }
-)(GoogleAuth);
+export default connect(mapStateToProps, { signIn, signOut })(GoogleAuth);
