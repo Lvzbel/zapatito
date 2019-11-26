@@ -53,7 +53,7 @@ export class Home extends Component {
         </section>
         <section className="Home__featured">
           <h3 className="Home__header">FEATURED PRODUCTS</h3>
-          <div className="container">
+          <div className="Home__container container">
             <Carousel className="Home-carousel">
               {this.renderCarouselItems()}
             </Carousel>
