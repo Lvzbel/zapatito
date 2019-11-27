@@ -14,6 +14,11 @@ export class MainNav extends Component {
     this.setState({ navigationActive: newState });
   };
 
+  closeNavigation = () => {
+    console.log("Activation");
+    this.setState({ navigationActive: false });
+  };
+
   render() {
     return (
       <nav className="MainNav">
@@ -34,16 +39,16 @@ export class MainNav extends Component {
             className={`MainNav__links ${this.state.navigationActive &&
               "MainNav__active"}`}
           >
-            <li className="MainNav__link">
+            <li onClick={this.closeNavigation} className="MainNav__link">
               <Link to="/" exact={true} content="home" funtional={true} />
             </li>
-            <li className="MainNav__link">
+            <li onClick={this.closeNavigation} className="MainNav__link">
               <Link to="/shop" content="shop" funtional={true} />
             </li>
-            <li className="MainNav__link">
+            <li onClick={this.closeNavigation} className="MainNav__link">
               <Link to="/about" content="about us" funtional={true} />
             </li>
-            <li className="MainNav__link">
+            <li onClick={this.closeNavigation} className="MainNav__link">
               <Link to="/contact" content="contact us" funtional={true} />
             </li>
           </ul>
