@@ -8,7 +8,7 @@ export class Hero extends Component {
       <header className="Hero">
         <div className="Hero__container container">
           <h1 className="Hero__header">High Quality Footware</h1>
-          <Link className="Hero__cta btn btn__primary" to="/">
+          <Link className="Hero__cta btn btn__primary" to="/shop">
             Shop Now!
           </Link>
         </div>
