@@ -96,7 +96,7 @@ function Footer() {
       </div>
       <div className="Footer__trademark">
         <div className="container">
-          <p>Created by Rodrigo Coto 2019</p>
+          <p>Created by Rodrigo Coto 2020</p>
           <div className="Footer__terms">
             <Link to="#">TERMS OF SERVICE</Link> <span>|</span>
             <Link to="#">PRIVACY POLICY</Link>
